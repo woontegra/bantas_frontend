@@ -8,10 +8,10 @@ export async function GET() {
   try {
     // Fetch categories with their items
     const categories = await prisma.menuCategory.findMany({
-      where: { isActive: true },
+      where: { active: true },
       include: {
         items: {
-          where: { isActive: true },
+          where: { active: true },
           orderBy: { order: 'asc' },
         },
       },
@@ -20,7 +20,7 @@ export async function GET() {
 
     // Fetch featured content
     const featured = await prisma.featuredContent.findFirst({
-      where: { isActive: true },
+      where: { active: true },
     });
 
     // Transform data to match frontend structure

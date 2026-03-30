@@ -24,7 +24,7 @@ const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
   const { data, error, isLoading } = useSWR<MenuData>(
-    isOpen ? (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000') + '/api/menu/about' : null,
+    isOpen ? '/api/menu/about' : null,
     fetcher,
     {
       revalidateOnFocus: false,
