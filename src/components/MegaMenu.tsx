@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import useSWR from 'swr';
 import { ChevronRight, Factory, History, Cpu, FileText, Users, Heart, Leaf } from 'lucide-react';
 import type { MenuData } from '@/types/menu';
 
@@ -20,18 +19,92 @@ const iconMap: Record<string, any> = {
   Factory,
 };
 
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+// Static fallback data for Vercel build
+const staticMenuData: MenuData = {
+  categories: [
+    {
+      id: '1',
+      title: 'Tarihçe',
+      slug: 'tarihce',
+      icon: 'History',
+      items: [
+        { id: '1-1', title: 'Şirket Tarihçesi', slug: 'sirket-tarihcesi', link: '#tarihce' },
+        { id: '1-2', title: 'Kilometre Taşları', slug: 'kilometre-taslari', link: '#milestones' },
+      ],
+    },
+    {
+      id: '2',
+      title: 'Teknoloji',
+      slug: 'teknoloji',
+      icon: 'Cpu',
+      items: [
+        { id: '2-1', title: 'Üretim Teknolojisi', slug: 'uretim-teknolojisi', link: '#technology' },
+        { id: '2-2', title: 'Ar-Ge Çalışmaları', slug: 'ar-ge', link: '#rnd' },
+      ],
+    },
+    {
+      id: '3',
+      title: 'Politikalarımız',
+      slug: 'politikalarimiz',
+      icon: 'FileText',
+      items: [
+        { id: '3-1', title: 'Kalite Politikası', slug: 'kalite-politikasi', link: '#quality-policy' },
+        { id: '3-2', title: 'Çevre Politikası', slug: 'cevre-politikasi', link: '#environment-policy' },
+        { id: '3-3', title: 'İş Sağlığı ve Güvenliği', slug: 'is-sagligi', link: '#health-safety' },
+      ],
+    },
+    {
+      id: '4',
+      title: 'İnsan Kaynakları',
+      slug: 'insan-kaynaklari',
+      icon: 'Users',
+      items: [
+        { id: '4-1', title: 'Kariyer Fırsatları', slug: 'kariyer', link: '#careers' },
+        { id: '4-2', title: 'Çalışan Hakları', slug: 'calisan-haklari', link: '#employee-rights' },
+      ],
+    },
+    {
+      id: '5',
+      title: 'Sosyal Sorumluluk',
+      slug: 'sosyal-sorumluluk',
+      icon: 'Heart',
+      items: [
+        { id: '5-1', title: 'Toplum Projeleri', slug: 'toplum-projeleri', link: '#community' },
+        { id: '5-2', title: 'Eğitim Destekleri', slug: 'egitim', link: '#education' },
+      ],
+    },
+    {
+      id: '6',
+      title: 'Sürdürülebilirlik',
+      slug: 'surdurulebilirlik',
+      icon: 'Leaf',
+      items: [
+        { id: '6-1', title: 'Çevre Yönetimi', slug: 'cevre-yonetimi', link: '#environment' },
+        { id: '6-2', title: 'Enerji Verimliliği', slug: 'enerji', link: '#energy' },
+      ],
+    },
+    {
+      id: '7',
+      title: 'Fabrikamız',
+      slug: 'fabrikamiz',
+      icon: 'Factory',
+      items: [
+        { id: '7-1', title: 'Üretim Tesisleri', slug: 'uretim-tesisleri', link: '#facilities' },
+        { id: '7-2', title: 'Kapasite', slug: 'kapasite', link: '#capacity' },
+      ],
+    },
+  ],
+  featured: {
+    image: '',
+    title: 'Kalite ve Güven',
+    description: 'ISO 9001 sertifikalı üretim süreçlerimizle sektörde öncüyüz',
+    buttonText: 'Daha Fazla Bilgi',
+    buttonLink: '#about',
+  },
+};
 
 export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
-  const { data, error, isLoading } = useSWR<MenuData>(
-    isOpen ? '/api/menu/about' : null,
-    fetcher,
-    {
-      revalidateOnFocus: false,
-      revalidateOnReconnect: false,
-    }
-  );
-
+  const data = staticMenuData;
   const [activeCategory, setActiveCategory] = React.useState<string | null>(null);
 
   // Set first category as active when data loads
@@ -42,38 +115,6 @@ export default function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
   }, [data, activeCategory]);
 
   if (!isOpen) return null;
-
-  // Loading state
-  if (isLoading) {
-    return (
-      <>
-        <div className="fixed inset-0 bg-black/10 z-40" onClick={onClose} />
-        <div className="fixed top-16 left-0 w-full z-50 bg-white" style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.08)' }}>
-          <div className="max-w-7xl mx-auto px-12 py-12">
-            <div className="flex items-center justify-center h-64">
-              <p className="text-sm font-light text-gray-400">Yükleniyor...</p>
-            </div>
-          </div>
-        </div>
-      </>
-    );
-  }
-
-  // Error state
-  if (error || !data) {
-    return (
-      <>
-        <div className="fixed inset-0 bg-black/10 z-40" onClick={onClose} />
-        <div className="fixed top-16 left-0 w-full z-50 bg-white" style={{ boxShadow: '0 10px 40px rgba(0,0,0,0.08)' }}>
-          <div className="max-w-7xl mx-auto px-12 py-12">
-            <div className="flex items-center justify-center h-64">
-              <p className="text-sm font-light text-red-500">Menü yüklenemedi</p>
-            </div>
-          </div>
-        </div>
-      </>
-    );
-  }
 
   const categories = data.categories;
   const activeData = categories.find((cat) => cat.id === activeCategory);
