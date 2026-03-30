@@ -1,0 +1,27 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "investor": "Investor Relations",
+    "news": "News",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "epayment": "E-Payment"
+  },
+  "hero": {
+    "title": "Strong Infrastructure in Metal Packaging Production",
+    "description": "We produce metal packaging with high quality standards in Turkey and global markets.",
+    "productionProcess": "Our Production Process",
+    "productGroups": "Product Groups",
+    "sustainability": "Sustainability",
+    "cta": "Corporate Presentation"
+  },
+  "icons": {
+    "production": "Production",
+    "quality": "Quality",
+    "export": "Export",
+    "technology": "Technology",
+    "sustainability": "Sustainability"
+  }
+}

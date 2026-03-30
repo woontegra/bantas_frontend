@@ -1,0 +1,70 @@
+// Bantas Metal Packaging - Database Schema
+// Custom Backend for Mega Menu Management
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Menu Category (Sol Taraf - Kategoriler)
+model MenuCategory {
+  id        String     @id @default(cuid())
+  title     String
+  slug      String     @unique
+  icon      String?    // Lucide icon name (optional)
+  order     Int        @default(0)
+  isActive  Boolean    @default(true)
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+  
+  items     MenuItem[]
+  
+  @@index([order])
+}
+
+// Menu Item (Orta - Alt Sayfalar)
+model MenuItem {
+  id         String       @id @default(cuid())
+  title      String
+  slug       String
+  link       String       // URL or anchor
+  order      Int          @default(0)
+  isActive   Boolean      @default(true)
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+  
+  categoryId String
+  category   MenuCategory @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  
+  @@index([categoryId, order])
+  @@index([slug])
+}
+
+// Featured Content (Sağ - WOW Alan)
+model FeaturedContent {
+  id          String   @id @default(cuid())
+  image       String?  // Image URL or path
+  title       String
+  description String
+  buttonText  String
+  buttonLink  String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// Admin User (Authentication)
+model AdminUser {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // Hashed
+  name      String
+  role      String   @default("admin")
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

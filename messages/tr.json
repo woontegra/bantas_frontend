@@ -1,0 +1,27 @@
+{
+  "header": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "investor": "Yatırımcı İlişkileri",
+    "news": "Haberler",
+    "gallery": "Galeri",
+    "contact": "İletişim",
+    "epayment": "E-Ödeme"
+  },
+  "hero": {
+    "title": "Metal Ambalaj Üretiminde Güçlü Altyapı",
+    "description": "Türkiye ve global pazarda yüksek kalite standartlarıyla metal ambalaj üretimi gerçekleştiriyoruz.",
+    "productionProcess": "Üretim Sürecimiz",
+    "productGroups": "Ürün Grupları",
+    "sustainability": "Sürdürülebilirlik",
+    "cta": "Kurumsal Tanıtım"
+  },
+  "icons": {
+    "production": "Üretim",
+    "quality": "Kalite",
+    "export": "İhracat",
+    "technology": "Teknoloji",
+    "sustainability": "Sürdürülebilirlik"
+  }
+}
