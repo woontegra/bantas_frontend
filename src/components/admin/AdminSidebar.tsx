@@ -21,7 +21,7 @@ const menuItems = [
   { icon: Image, label: 'Before/After', href: '/tr/admin/before-after' },
   { icon: Award, label: 'Avantajlar', href: '/tr/admin/advantages' },
   { icon: Bell, label: 'Duyuru Barı', href: '/tr/admin/announcements' },
-  { icon: Info, label: 'Hakkımızda', href: '/tr/admin/about' },
+  { icon: Info, label: 'Mega Menu', href: '/tr/admin/about' },
   { icon: Menu, label: 'Footer', href: '/tr/admin/footer' },
 ];
 
