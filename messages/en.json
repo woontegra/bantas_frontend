@@ -1,13 +1,67 @@
 {
   "header": {
     "home": "Home",
+    "corporate": "Corporate",
+    "corporateSub": {
+      "history": "History",
+      "technology": "Technology",
+      "qualityCerts": "Quality certificates",
+      "policies": "Our policies",
+      "hr": "Human resources",
+      "csr": "Social responsibility",
+      "sustainability": "Sustainability principles",
+      "policyInfoSecurity": "Information security policy",
+      "policyFoodSafety": "Food safety policy",
+      "policyHrPolicy": "Human resources policy",
+      "policyOhs": "Occupational health and safety policy",
+      "policyQuality": "Quality policy",
+      "policyDataRetention": "Personal data storage and destruction policy",
+      "policyKvkkProcessing": "Personal data protection and processing policy",
+      "policyWebDisclosure": "Website disclosure policy",
+      "policyKvkkForm": "KVKK – Application form"
+    },
     "about": "About Us",
     "products": "Products",
+    "productsSub": {
+      "cheese": "Cheese tins",
+      "oil": "Oil tins",
+      "olivePickle": "Olive / pickle tins",
+      "industrial": "Thinner / antifreeze / mineral oil tins"
+    },
     "investor": "Investor Relations",
     "news": "News",
     "gallery": "Gallery",
     "contact": "Contact",
     "epayment": "E-Payment"
+  },
+  "policies": {
+    "hubTitle": "Our policies",
+    "hubIntro": "You can access our company policies via the links below.",
+    "placeholder": "The content of this page will be updated shortly.",
+    "backToPolicies": "All policies",
+    "detail": {
+      "bilgi-guvenligi-politikasi": { "title": "Information security policy" },
+      "gida-guvenligi-politikasi": { "title": "Food safety policy" },
+      "insan-kaynaklari-politikasi": { "title": "Human resources policy" },
+      "is-sagligi-guvenligi-politikasi": { "title": "Occupational health and safety policy" },
+      "kalite-politikasi": { "title": "Quality policy" },
+      "kisisel-veri-saklama-ve-imha-politikasi": { "title": "Personal data storage and destruction policy" },
+      "kisisel-verilerin-korunmasi-ve-islenmesi-politikasi": { "title": "Personal data protection and processing policy" },
+      "web-sitesi-aydinlatma-politikasi": { "title": "Website disclosure policy" },
+      "kvkk-basvuru-formu": { "title": "KVKK – Application form" }
+    }
+  },
+  "productCategories": {
+    "hubTitle": "Products",
+    "hubIntro": "Explore our metal packaging product groups below.",
+    "placeholder": "The content of this page will be updated shortly.",
+    "backToProducts": "All products",
+    "detail": {
+      "peynir-tenekeleri": { "title": "Cheese tins" },
+      "yag-tenekeleri": { "title": "Oil tins" },
+      "zeytin-tursu-tenekeleri": { "title": "Olive / pickle tins" },
+      "tiner-antifriz-madeni-yag-tenekeleri": { "title": "Thinner / antifreeze / mineral oil tins" }
+    }
   },
   "hero": {
     "title": "Strong Infrastructure in Metal Packaging Production",
@@ -23,5 +77,517 @@
     "export": "Export",
     "technology": "Technology",
     "sustainability": "Sustainability"
+  },
+  "history": {
+    "title": "Our History",
+    "subtitle": "Our Journey",
+    "description": "Since 1986, as a leading company in the metal packaging industry, we continue to grow by combining quality and innovation.",
+    "stats": {
+      "experience": "Years of Experience",
+      "capacity": "Production Capacity",
+      "products": "Product Variety"
+    },
+    "cta": {
+      "title": "Towards the Future",
+      "description": "With over 40 years of experience, we continue to provide innovative solutions in the metal packaging industry and deliver the highest quality service to our customers."
+    },
+    "categories": {
+      "company": "Company",
+      "product": "Product",
+      "achievement": "Achievement"
+    },
+    "events": {
+      "1986": "Our company was established in 1986 under the name BANTAS for Turkey and Middle Eastern countries and started producing its first products.",
+      "1994": "Bantas was established in 1994 under the name BANTAS and started production for Turkey and Middle Eastern countries. Our company offers quality and modern technology products.",
+      "1998_1": "Our developed products received great interest in Turkey and Middle Eastern countries and exports to these countries began. At the same time, it gained an important position in the domestic market.",
+      "1998_2": "Our developed products received great interest in Turkey and Middle Eastern countries and exports to these countries began.",
+      "2005": "As Bantas, we have reached the production capacity of 750 thousand 500cc Metal Boxes, Preparation Cans, Paint Cans, 10 Liter and 20 Liter CANS, 5 KG AND 10 KG Adhesive Cans and other metal packaging products.",
+      "2008": "We have 727 different product types for our customers and serve with 25-50 product types that can appeal to all sectors.",
+      "2009": "Thanks to offset printing technology, 6-color printing can be done on 500 ml 1 lt 2 lt 5 lt 10 lt 20 lt packages.",
+      "2010": "Moving to a new factory building and increasing production capacity.",
+      "2011": "18 liter 20 lt packaging production line was established and 500cc metal packaging production started.",
+      "2016": "Quality certificates were obtained. Sales network expanded in Turkey and Middle Eastern countries. 10 and 18 liter can production capacity reached 1 million units.",
+      "2017": "A new factory was established for our growing structure. Our production capacity was increased with new products and technologies. An environmentally friendly and sustainable production approach was adopted. A strong position was achieved in domestic and international markets."
+    }
+  },
+  "technology": {
+    "title": "Technology",
+    "subtitle": "Our Production Technologies",
+    "description": "In our modern production facilities, we carry out metal packaging production according to international quality standards with state-of-the-art machines and our experienced team.",
+    "stats": {
+      "established": "Established",
+      "capacity": "Production Capacity",
+      "certified": "Certified"
+    },
+    "metalOffsetBaski": {
+      "title": "BANTAS METAL OFFSET PRINTING FACTORY",
+      "description": "Our company, established in 2004 under the Bantas A.S brand with the aim of providing you with innovative, advanced, quality products and services and increasing customer satisfaction, is one of Turkey's first metal offset printing and tin can production facilities and continues to make large investments for new approaches."
+    },
+    "metal-offset-baski": {
+      "subtitle": "METAL OFFSET PRINTING",
+      "details": "Our Offset Printing factory provides the most advanced offset printing and highest quality metal offset printing, production technology with cans and metal offset printing service. Our company produces according to European and American standards with its Metal Offset Printing factory, and the products produced in Metal Offset Printing and Tin Can Production Facilities perform Key Offset printing and stage processing in 1500*1100 maximum 1500*700 maximum colors. Our products produced with advanced technology provide metal offset printing service with offset tin printing and offset films according to your needs and demands."
+    },
+    "tenekeKutu": {
+      "title": "BANTAS TIN CAN FACTORY",
+      "description": "In our company, plastic, metal, tin, oil and Senner damaged tin can production is carried out. Our products are produced in fully automatic machines in accordance with international standards. Our company continuously invests in new technologies, works on new processes and produces without compromising quality in order to produce high quality tin cans."
+    },
+    "teneke-kutu": {
+      "subtitle": "PRODUCTION PROCESS",
+      "details": "All these stages have been assigned 5 Stage Production System 'All This 2000*2000 Circle Defense system and 18 18001 2014 Occupational Health and Safety management system certificate. Separate productions are also produced in our subsidiary. The dimensions of our tin packaging vary between SS All and 300 mm according to customer and demand. Our company has reached the production capacity of 750 thousand 500cc Metal Boxes, Preparation Cans, Paint Cans, 10 Liter and 20 Liter CANS, 5 KG AND 10 KG Adhesive Cans and other metal packaging products."
+    },
+    "tenekeEbatlari": {
+      "title": "TIN CAN SIZES",
+      "description": "Our company has reached the production capacity of 750 thousand 500cc Metal Boxes, Preparation Cans, Paint Cans, 10 Liter and 20 Liter CANS, 5 KG AND 10 KG Adhesive Cans and other metal packaging products. We can produce in custom sizes according to our customers' needs.",
+      "sizes": {
+        "title": "Our Square Tin Can Sizes:",
+        "items": {
+          "0": "40×100 mm",
+          "1": "114×110 mm",
+          "2": "99×110 mm",
+          "3": "180×100 mm",
+          "4": "214×215 mm",
+          "5": "Our Round Tin Can Sizes:",
+          "6": "99 mm",
+          "7": "114 mm",
+          "8": "168 mm",
+          "9": "153 mm",
+          "10": "152 mm"
+        }
+      }
+    }
+  },
+  "certificates": {
+    "title": "Our Quality Certificates",
+    "subtitle": "Quality and Standards",
+    "description": "Our company, which produces in accordance with international quality standards, provides confidence to our customers with its certificates.",
+    "intro": {
+      "title": "Our Quality Assurance",
+      "text": "Our company has international standards in quality management systems, environmental management, occupational health and safety, and food safety. All our production processes are carried out in accordance with these standards."
+    },
+    "iso9001": {
+      "title": "ISO 9001:2015 Quality Management System",
+      "description": "ISO 9001:2015 Quality Management System certificate shows that our company's quality management system complies with international standards. This certificate ensures that we increase customer satisfaction and adhere to continuous improvement principles."
+    },
+    "iso14001": {
+      "title": "ISO 14001:2015 Environmental Management System",
+      "description": "ISO 14001:2015 Environmental Management System certificate demonstrates our company's commitment to environmentally friendly production. Preventing environmental pollution, using natural resources efficiently, and sustainable production are among our basic principles."
+    },
+    "iso45001": {
+      "title": "ISO 45001:2018 Occupational Health and Safety Management System",
+      "description": "ISO 45001:2018 Occupational Health and Safety Management System certificate shows that we take all necessary measures to protect the health and safety of our employees. Providing a safe working environment is our priority."
+    },
+    "iso22000": {
+      "title": "ISO 22000:2018 Food Safety Management System",
+      "description": "ISO 22000:2018 Food Safety Management System certificate shows that our packaging production in contact with food complies with international food safety standards. Providing safe products to our customers is our most important responsibility."
+    },
+    "halal": {
+      "title": "Halal Food Certificate",
+      "description": "Halal Food Certificate shows that our production processes and products comply with Islamic rules. With this certificate, we serve our Muslim customers with confidence."
+    },
+    "footer": {
+      "title": "Our Quality Commitment",
+      "description": "As Bantaş, we continue to continuously improve our quality standards and provide the highest quality products and services to our customers. All our certificates are regularly audited and renewed."
+    }
+  },
+  "humanResources": {
+    "title": "Human Resources",
+    "subtitle": "Our Human Resources",
+    "description": "Our employees are our most valuable asset. Learn about our human resources policy and recruitment processes.",
+    "policy": {
+      "title": "BANTAS Human Resources Policy",
+      "paragraph1": "Sample successful, employees' work and extraordinary work and participating Bantas Community is human resources policy.",
+      "paragraph2": "Measurable creativity family and measurable sample human opinion Not to be protected.",
+      "paragraph3": "Different floor expert and connected ideas working together employees' creative potential not.",
+      "paragraph4": "Your employees' covered and professional developments Sn useful subject, their training and development."
+    },
+    "recruitment": {
+      "title": "BANTAS Selection And Placement Process",
+      "paragraph1": "At Bantas, to select the most suitable resource for the applied position, measurable competency comparison is made.",
+      "paragraph2": "At Bantas, to select the most suitable resource for the applied position, measurable competency comparison is made. For this position, competency comparison is made.",
+      "paragraph3": "In the candidate selection process, attention is paid to impartial, objective evaluation. In the recruitment process, applications of candidates with the necessary competencies for open positions are evaluated.",
+      "paragraph4": "Candidate's potential impartiality objective evaluation is paid attention to. Bantas Community and your employees' borrowing process basic competencies candidates' applications are evaluated."
+    },
+    "imageSection": {
+      "title": "We Wrote Our Name At The Summit With Our Employees",
+      "description": "With all of our employees and the strong team we have achieved important competencies, we continue to ensure employee satisfaction, which is the biggest factor of our successes in our production."
+    }
+  },
+  "socialResponsibility": {
+    "title": "Social Responsibility",
+    "subtitle": "Our Social Responsibility",
+    "description": "We are aware of our responsibility towards society and the environment. Learn about our social responsibility projects and environmental awareness.",
+    "intro": {
+      "title": "WE ARE AWARE OF OUR SOCIAL RESPONSIBILITY.",
+      "paragraph1": "As Bantas A.S., carrying social responsibility awareness, in the direction of social development of our country.",
+      "paragraph2": "Just as, our employees, our families, contributing to society.",
+      "paragraph3": "Supporting Society And Environment Style activities our society's social and measurement health labor, time and investment."
+    },
+    "projects": {
+      "title": "Education Field Supporting You Project",
+      "environment": {
+        "title": "Protecting natural resources is our duty",
+        "paragraph1": "Bantas A.S. integration, positive ideas winter, recycling provides for.",
+        "paragraph2": "Other as which gender door waste use without participation recycling provide, new complete parties."
+      },
+      "community": {
+        "title": "Community and Environment Support Initiatives",
+        "paragraph1": "Developing your society's social and measurement health labor, time and investment.",
+        "paragraph2": "Used law activities are made primarily giving contributions supports."
+      },
+      "education": {
+        "title": "Education and Future Generations",
+        "paragraph1": "Developing environment activities safe with door competitions activities.",
+        "paragraph2": "Income environment activities safe with door competitions activities are made."
+      }
+    },
+    "footer": {
+      "title": "Our Social Responsibility Commitment",
+      "description": "As Bantas, being aware of our responsibility towards society and the environment, we continue to develop sustainable projects and leave a more livable world for future generations."
+    }
+  },
+  "products": {
+    "cheese": {
+      "title": "Cheese Cans",
+      "subtitle": "Food Packaging Solutions",
+      "description": "Preserve the freshness of your products with our specially designed, hygienic and durable metal packaging solutions for cheese and dairy products.",
+      "intro": {
+        "title": "Our Cheese Storage Solutions",
+        "paragraph1": "Our cheese cans are specially designed to preserve the freshness and flavor of cheese for a long time.",
+        "paragraph2": "Manufactured from stainless and hygienic materials in accordance with food safety standards.",
+        "paragraph3": "We respond to all kinds of needs by producing in different sizes and capacities."
+      },
+      "features": {
+        "title": "Product Features",
+        "feature1": {
+          "title": "Hygienic Production",
+          "description": "Produced in hygienic conditions in accordance with food safety standards."
+        },
+        "feature2": {
+          "title": "Airtight Lid",
+          "description": "Preserves product freshness for a long time with special lid system."
+        },
+        "feature3": {
+          "title": "Custom Design",
+          "description": "Custom printing and design options are available for your brand."
+        }
+      },
+      "specifications": {
+        "title": "Technical Specifications",
+        "spec1": {
+          "label": "Material",
+          "value": "Food grade tinplate"
+        },
+        "spec2": {
+          "label": "Capacity",
+          "value": "5kg - 20kg range"
+        },
+        "spec3": {
+          "label": "Coating",
+          "value": "Inner surface food lacquer"
+        },
+        "spec4": {
+          "label": "Lid Type",
+          "value": "Airtight gasket"
+        },
+        "spec5": {
+          "label": "Printing",
+          "value": "Offset printing available"
+        },
+        "spec6": {
+          "label": "Certificate",
+          "value": "ISO 9001, Food Safety"
+        }
+      },
+      "cta": {
+        "title": "Cheese Can Order",
+        "description": "Contact us for detailed information about our quality cheese cans and to place an order."
+      }
+    },
+    "oil": {
+      "title": "Oil Cans",
+      "subtitle": "Oil Storage Solutions",
+      "description": "Our specially designed, leak-proof and durable metal packaging solutions for olive oil, sunflower oil and other liquid oils.",
+      "intro": {
+        "title": "Our Oil Storage Solutions",
+        "paragraph1": "Our oil cans are designed for safe and hygienic storage of liquid oils.",
+        "paragraph2": "Provides long-lasting use with leak-proof lid system and durable structure.",
+        "paragraph3": "Suitable for olive oil, sunflower oil and all other liquid oils."
+      },
+      "features": {
+        "title": "Product Features",
+        "feature1": {
+          "title": "Leak-proof Structure",
+          "description": "Provides completely leak-proof protection with special gasket system."
+        },
+        "feature2": {
+          "title": "Easy to Use",
+          "description": "Easy to open and close with practical lid system."
+        },
+        "feature3": {
+          "title": "Durable Material",
+          "description": "Stainless and impact-resistant metal structure."
+        }
+      },
+      "specifications": {
+        "title": "Technical Specifications",
+        "spec1": {
+          "label": "Material",
+          "value": "Galvanized sheet"
+        },
+        "spec2": {
+          "label": "Capacity",
+          "value": "5L - 20L range"
+        },
+        "spec3": {
+          "label": "Coating",
+          "value": "Inner surface protective coating"
+        },
+        "spec4": {
+          "label": "Lid Type",
+          "value": "Screw leak-proof lid"
+        },
+        "spec5": {
+          "label": "Handle",
+          "value": "Carrying handle available"
+        },
+        "spec6": {
+          "label": "Printing",
+          "value": "Custom design printing"
+        }
+      },
+      "cta": {
+        "title": "Oil Can Order",
+        "description": "Contact us for detailed information about our high quality oil cans and to place an order."
+      }
+    },
+    "olive": {
+      "title": "Olive / Pickle Cans",
+      "subtitle": "Brine Product Packaging",
+      "description": "Our specially designed, acid-resistant and hygienic metal packaging solutions for olives, pickles and brine products.",
+      "intro": {
+        "title": "Our Brine Product Solutions",
+        "paragraph1": "Our olive and pickle cans are specially designed for safe storage of brine products.",
+        "paragraph2": "Preserves the taste and quality of the product with acid-resistant inner coating.",
+        "paragraph3": "We offer solutions suitable for all kinds of needs with production in different sizes."
+      },
+      "features": {
+        "title": "Product Features",
+        "feature1": {
+          "title": "Acid Resistance",
+          "description": "Full protection against brine with special inner coating."
+        },
+        "feature2": {
+          "title": "Hygienic Production",
+          "description": "Production in accordance with food safety standards."
+        },
+        "feature3": {
+          "title": "Long Lasting",
+          "description": "Rust resistant, long lasting use."
+        }
+      },
+      "specifications": {
+        "title": "Technical Specifications",
+        "spec1": {
+          "label": "Material",
+          "value": "Acid resistant tinplate"
+        },
+        "spec2": {
+          "label": "Capacity",
+          "value": "5kg - 25kg range"
+        },
+        "spec3": {
+          "label": "Coating",
+          "value": "Special acid resistant lacquer"
+        },
+        "spec4": {
+          "label": "Lid Type",
+          "value": "Leak-proof lid system"
+        },
+        "spec5": {
+          "label": "Handle",
+          "value": "Reinforced carrying handle"
+        },
+        "spec6": {
+          "label": "Printing",
+          "value": "Color offset printing"
+        }
+      },
+      "cta": {
+        "title": "Olive/Pickle Can Order",
+        "description": "Contact us for detailed information about our special cans for brine products and to place an order."
+      }
+    },
+    "chemical": {
+      "title": "Thinner / Antifreeze / Mineral Oil Cans",
+      "subtitle": "Chemical Product Packaging",
+      "description": "Our specially designed, safe and durable metal packaging solutions for thinner, antifreeze, mineral oil and other chemical products.",
+      "intro": {
+        "title": "Our Chemical Product Solutions",
+        "paragraph1": "Our chemical product cans are specially designed for safe storage of hazardous materials.",
+        "paragraph2": "Provides maximum safety with chemical resistant inner coating and leak-proof lid system.",
+        "paragraph3": "Suitable for use in international transportation with production in accordance with UN standards."
+      },
+      "features": {
+        "title": "Product Features",
+        "feature1": {
+          "title": "Chemical Resistance",
+          "description": "Full protection against chemical substances with special coating."
+        },
+        "feature2": {
+          "title": "Safety",
+          "description": "Maximum safety with leak-proof lid and safety gasket."
+        },
+        "feature3": {
+          "title": "Standards Compliance",
+          "description": "Production in accordance with UN and ADR standards."
+        }
+      },
+      "specifications": {
+        "title": "Technical Specifications",
+        "spec1": {
+          "label": "Material",
+          "value": "Chemical resistant sheet"
+        },
+        "spec2": {
+          "label": "Capacity",
+          "value": "1L - 20L range"
+        },
+        "spec3": {
+          "label": "Coating",
+          "value": "Chemical resistant epoxy"
+        },
+        "spec4": {
+          "label": "Lid Type",
+          "value": "Safety gasket"
+        },
+        "spec5": {
+          "label": "Certificate",
+          "value": "UN approved"
+        },
+        "spec6": {
+          "label": "Label",
+          "value": "Hazard signs"
+        }
+      },
+      "cta": {
+        "title": "Chemical Product Can Order",
+        "description": "Contact us for detailed information about our safe cans for chemical products and to place an order."
+      }
+    }
+  },
+  "genelKurul": {
+    "title": "General Assembly Information",
+    "subtitle": "Compliance Reports",
+    "description": "Our company's general assembly meetings and resolutions",
+    "meetings": "General Assembly Meetings",
+    "ordinary": "Ordinary",
+    "extraordinary": "Extraordinary",
+    "totalMeetings": "Total Meetings",
+    "ordinaryMeetings": "Ordinary General Assembly",
+    "extraordinaryMeetings": "Extraordinary General Assembly",
+    "activeMeetings": "Active Meetings",
+    "between": "Between",
+    "pdfDocument": "PDF Document",
+    "infoTitle": "General Assembly Information",
+    "infoDescription": "Our General Assembly meetings are held in accordance with the Turkish Commercial Code and Capital Markets Legislation. Meeting agenda items, participation information and resolutions are publicly disclosed through the Public Disclosure Platform (KAP).",
+    "ctaTitle": "Investor Relations",
+    "ctaDescription": "For detailed information about general assembly meetings and other corporate information, you can review our investor relations pages."
+  },
+  "faaliyetRaporlari": {
+    "title": "Activity Reports",
+    "subtitle": "Activity Reports",
+    "description": "Our company's annual and periodic activity reports",
+    "pdfDocument": "PDF Document",
+    "infoTitle": "About Activity Reports",
+    "infoDescription": "Our activity reports contain detailed information about our company's financial status, operational performance and strategic objectives. Reports are prepared in accordance with Capital Markets Board regulations and publicly disclosed."
+  },
+  "home": {
+    "topBar": {
+      "email": "info@bantas.com.tr",
+      "phone": "+90 (266) 733 20 20"
+    },
+    "hero": {
+      "companyName": "Bantaş Inc.",
+      "cta": "Contact",
+      "prev": "Previous slide",
+      "next": "Next slide",
+      "tagline": "Your trusted partner in metal packaging."
+    },
+    "quickActions": {
+      "quoteTitle": "Request a quote",
+      "quoteDesc": "Reach us for packaging solutions tailored to your needs.",
+      "kvkk": "Your personal data is protected under KVKK (Turkish Data Protection Law). You can review our privacy notice.",
+      "catalogTitle": "Catalog",
+      "catalogDesc": "Browse our product groups in PDF format."
+    },
+    "products": {
+      "title": "Products",
+      "olive": "Olive tins",
+      "cheese": "Cheese tins",
+      "oil": "Oil tins",
+      "other": "Other tins"
+    },
+    "features": {
+      "reliableTitle": "Reliable service",
+      "reliableDesc": "Long-term partnerships and transparent processes.",
+      "experienceTitle": "31 years of experience",
+      "experienceDesc": "Deep know-how in metal packaging and growing capacity.",
+      "qualityTitle": "High-quality products",
+      "qualityDesc": "Production aligned with international standards and rigorous QC."
+    },
+    "qualitySection": {
+      "title": "Bantaş quality elevates your brand",
+      "body": "Alongside producing high-quality and reliable tin packaging, Bantaş uses advanced printing technology to enhance the visual quality of your products and influence your customers' purchasing decisions.",
+      "beforeLabel": "Empty Tin",
+      "afterLabel": "Printed Tin",
+      "dragHint": "Drag to compare"
+    },
+    "intro": {
+      "title": "Bantaş tin packaging",
+      "titleHighlight": "solutions",
+      "body": "We manufacture at scale in our modern Bandırma facilities and supply reliable tin packaging for food and industrial applications."
+    },
+    "about": {
+      "eyebrow": "ABOUT US",
+      "title": "Bantaş",
+      "p1": "Bantaş is a metal packaging company focused on innovative and sustainable production.",
+      "p2": "We prioritize environmentally conscious production and workplace safety while developing tailored customer solutions.",
+      "p3": "As a strong supplier in Türkiye and abroad, we add value through quality and on-time delivery."
+    },
+    "footer": {
+      "addressLine1": "Bandırma OSB, Balıkesir",
+      "kurumsalTitle": "Corporate",
+      "investorTitle": "Investor relations",
+      "menuTitle": "Menu",
+      "linkAbout": "About us",
+      "linkHistory": "History",
+      "linkTech": "Technology",
+      "linkCerts": "Quality certificates",
+      "linkBilgi": "Information society services",
+      "linkBoard": "Board of directors",
+      "linkPolicies": "Policies",
+      "linkGK": "General assembly",
+      "linkGallery": "Gallery",
+      "linkContact": "Contact",
+      "linkNewsletter": "Newsletter"
+    },
+    "beforeAfter": {
+      "title": "Transformation in production",
+      "before": "Before",
+      "after": "After",
+      "beforeCaption": "Planning and material selection",
+      "afterCaption": "Modern lines and traceable quality"
+    },
+    "megaMenu": {
+      "panelTitle": "Corporate",
+      "close": "Close",
+      "aboutTitle": "About us",
+      "linkAbout": "Company profile",
+      "linkHistory": "History",
+      "linkMission": "Mission & vision",
+      "linkTech": "Technology",
+      "linkQuality": "Quality certificates",
+      "linkKvkk": "Privacy & KVKK"
+    }
   }
 }

@@ -1,0 +1,42 @@
+[
+  {
+    "slug": "peynir-tenekeleri",
+    "hero": {
+      "title_tr": "Peynir Tenekeleri",
+      "title_en": "Cheese Tins",
+      "desc_tr": "Peynir tenekeleri sayfa içeriği buradan yönetilecek.",
+      "desc_en": "Content will be managed here."
+    },
+    "content": {
+      "title_tr": "Peynir Tenekeleri",
+      "title_en": "Cheese Tins",
+      "text_tr": "Peynir ve süt ürünlerinizin tazeliğini uzun süre korumak için özel olarak tasarlanmış tenekelerimiz...",
+      "text_en": "Our tins are designed to preserve freshness..."
+    },
+    "cards": [
+      {
+        "title_tr": "Hijyenik Üretim",
+        "title_en": "Hygienic Production",
+        "desc_tr": "Gıda güvenliği standartlarına uygun üretim",
+        "desc_en": "Food safety compliant production"
+      },
+      {
+        "title_tr": "Hava Geçirmez Kapak",
+        "title_en": "Airtight Lid",
+        "desc_tr": "Uzun süre tazelik sağlar",
+        "desc_en": "Keeps freshness longer"
+      },
+      {
+        "title_tr": "Özel Tasarım",
+        "title_en": "Custom Design",
+        "desc_tr": "Markanıza özel üretim",
+        "desc_en": "Custom production"
+      }
+    ],
+    "image": "",
+    "seo": {
+      "title": "Peynir Tenekeleri",
+      "description": ""
+    }
+  }
+]

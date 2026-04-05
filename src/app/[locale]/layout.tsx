@@ -1,14 +1,10 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import { notFound } from 'next/navigation';
-import { Inter } from 'next/font/google';
-import '../globals.css';
-import { locales } from '@/i18n';
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages, setRequestLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import type { ReactNode } from "react";
+import { DocumentLangEffect } from "@/components/layout/DocumentLangEffect";
 
-const inter = Inter({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600']
-});
+const locales = ["tr", "en"];
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -16,25 +12,22 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
   children,
-  params: { locale }
+  params,
 }: {
-  children: React.ReactNode;
-  params: { locale: string };
+  children: ReactNode;
+  params: { locale: string } | Promise<{ locale: string }>;
 }) {
-  if (!locales.includes(locale as any)) {
-    notFound();
-  }
+  const { locale } = await Promise.resolve(params);
+  if (!locales.includes(locale)) notFound();
+
+  setRequestLocale(locale);
 
   const messages = await getMessages();
-  const isRTL = locale === 'ar';
 
   return (
-    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'}>
-      <body className={inter.className}>
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <DocumentLangEffect />
+      {children}
+    </NextIntlClientProvider>
   );
 }

@@ -2,48 +2,58 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  color: #1f2937;
-  background: #ffffff;
-  overflow-x: hidden;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@layer base {
+  :root {
+    --brand: #2f2f8f;
+    --brand-dark: #1a1a5c;
   }
-  
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-hero-ken-burns {
+      animation: none !important;
+    }
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+@layer components {
+  .label {
+    @apply mb-1.5 block text-xs font-medium text-slate-600;
   }
-  to {
-    opacity: 1;
+  .input {
+    @apply w-full rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm text-slate-900 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/20;
   }
-}
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
+  /* ── Ürün detay sayfası — admin'den gelen HTML içerik stilleri ── */
+  .product-html {
+    @apply text-slate-600 leading-relaxed text-[0.9375rem];
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .product-html p { @apply mb-4; }
+  .product-html h2 {
+    @apply mt-8 mb-3 text-xl font-bold text-brand-dark pb-2 border-b-2 border-slate-200;
   }
+  .product-html h3 {
+    @apply mt-5 mb-2 text-base font-semibold text-brand;
+  }
+  .product-html ul {
+    @apply my-3 list-disc pl-5 space-y-1;
+  }
+  .product-html strong { @apply font-semibold text-slate-800; }
+  .product-html img { @apply max-w-full rounded-xl; }
+
+  /* Tablolar */
+  .product-html table {
+    @apply w-full border-collapse mt-4 mb-7 text-sm overflow-hidden rounded-xl border border-slate-200;
+  }
+  .product-html thead {
+    @apply bg-brand text-white;
+  }
+  .product-html thead th {
+    @apply px-4 py-3 text-left text-xs font-semibold tracking-wide whitespace-nowrap;
+  }
+  .product-html tbody tr:nth-child(even) { @apply bg-slate-50; }
+  .product-html tbody tr { @apply transition hover:bg-blue-50/60; }
+  .product-html tbody td {
+    @apply px-4 py-2.5 border-b border-slate-100 text-slate-700;
+  }
+  .product-html tbody tr:last-child td { @apply border-none; }
 }

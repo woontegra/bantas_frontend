@@ -1,13 +1,67 @@
 {
   "header": {
     "home": "Ana Sayfa",
+    "corporate": "Kurumsal",
+    "corporateSub": {
+      "history": "Tarihçe",
+      "technology": "Teknoloji",
+      "qualityCerts": "Kalite Belgelerimiz",
+      "policies": "Politikalarımız",
+      "hr": "İnsan Kaynakları",
+      "csr": "Sosyal Sorumluluk",
+      "sustainability": "Sürdürülebilirlik İlkelerimiz",
+      "policyInfoSecurity": "Bilgi Güvenliği Politikası",
+      "policyFoodSafety": "Gıda Güvenliği Politikası",
+      "policyHrPolicy": "İnsan Kaynakları Politikası",
+      "policyOhs": "İş Sağlığı Güvenliği Politikası",
+      "policyQuality": "Kalite Politikası",
+      "policyDataRetention": "Kişisel Veri Saklama ve İmha Politikası",
+      "policyKvkkProcessing": "Kişisel Verilerin Korunması ve İşlenmesi Politikası",
+      "policyWebDisclosure": "Web Sitesi Aydınlatma Politikası",
+      "policyKvkkForm": "KVKK – Başvuru Formu"
+    },
     "about": "Hakkımızda",
     "products": "Ürünler",
+    "productsSub": {
+      "cheese": "Peynir Tenekeleri",
+      "oil": "Yağ Tenekeleri",
+      "olivePickle": "Zeytin/Turşu Tenekeleri",
+      "industrial": "Tiner/Antifriz/Madeni Yağ Tenekeleri"
+    },
     "investor": "Yatırımcı İlişkileri",
     "news": "Haberler",
     "gallery": "Galeri",
     "contact": "İletişim",
     "epayment": "E-Ödeme"
+  },
+  "policies": {
+    "hubTitle": "Politikalarımız",
+    "hubIntro": "Şirket politikalarımıza aşağıdaki bağlantılardan ulaşabilirsiniz.",
+    "placeholder": "Bu sayfanın içeriği en kısa sürede güncellenecektir.",
+    "backToPolicies": "Tüm politikalar",
+    "detail": {
+      "bilgi-guvenligi-politikasi": { "title": "Bilgi Güvenliği Politikası" },
+      "gida-guvenligi-politikasi": { "title": "Gıda Güvenliği Politikası" },
+      "insan-kaynaklari-politikasi": { "title": "İnsan Kaynakları Politikası" },
+      "is-sagligi-guvenligi-politikasi": { "title": "İş Sağlığı Güvenliği Politikası" },
+      "kalite-politikasi": { "title": "Kalite Politikası" },
+      "kisisel-veri-saklama-ve-imha-politikasi": { "title": "Kişisel Veri Saklama ve İmha Politikası" },
+      "kisisel-verilerin-korunmasi-ve-islenmesi-politikasi": { "title": "Kişisel Verilerin Korunması ve İşlenmesi Politikası" },
+      "web-sitesi-aydinlatma-politikasi": { "title": "Web Sitesi Aydınlatma Politikası" },
+      "kvkk-basvuru-formu": { "title": "KVKK – Başvuru Formu" }
+    }
+  },
+  "productCategories": {
+    "hubTitle": "Ürünler",
+    "hubIntro": "Metal ambalaj ürün gruplarımızı aşağıdan inceleyebilirsiniz.",
+    "placeholder": "Bu sayfanın içeriği en kısa sürede güncellenecektir.",
+    "backToProducts": "Tüm ürünler",
+    "detail": {
+      "peynir-tenekeleri": { "title": "Peynir Tenekeleri" },
+      "yag-tenekeleri": { "title": "Yağ Tenekeleri" },
+      "zeytin-tursu-tenekeleri": { "title": "Zeytin/Turşu Tenekeleri" },
+      "tiner-antifriz-madeni-yag-tenekeleri": { "title": "Tiner/Antifriz/Madeni Yağ Tenekeleri" }
+    }
   },
   "hero": {
     "title": "Metal Ambalaj Üretiminde Güçlü Altyapı",
@@ -23,5 +77,517 @@
     "export": "İhracat",
     "technology": "Teknoloji",
     "sustainability": "Sürdürülebilirlik"
+  },
+  "history": {
+    "title": "Tarihçemiz",
+    "subtitle": "Yolculuğumuz",
+    "description": "1986 yılından bu yana metal ambalaj sektöründe öncü bir firma olarak, kalite ve yenilikçiliği bir araya getirerek büyümeye devam ediyoruz.",
+    "stats": {
+      "experience": "Yıllık Tecrübe",
+      "capacity": "Üretim Kapasitesi",
+      "products": "Ürün Çeşidi"
+    },
+    "cta": {
+      "title": "Geleceğe Doğru",
+      "description": "40 yılı aşkın tecrübemizle, metal ambalaj sektöründe yenilikçi çözümler sunmaya ve müşterilerimize en kaliteli hizmeti vermeye devam ediyoruz."
+    },
+    "categories": {
+      "company": "Şirket",
+      "product": "Ürün",
+      "achievement": "Başarı"
+    },
+    "events": {
+      "1986": "Şirketimiz Türkiye ve ortadoğu ülkelerine yönelik olarak 1986 yılında BANTAS adıyla kurulmuş ve ilk ürünlerini üretmeye başlamıştır.",
+      "1994": "Bantas 1994 yılında BANTAS adı altında kurulmuş olup, Türkiye ve Ortadoğu ülkelerine yönelik olarak üretim yapmaya başlamıştır. Şirketimiz kaliteli ve modern teknoloji ürünleri sunmaktadır.",
+      "1998_1": "Geliştirdiğimiz ürünler Türkiye ve Orta Doğu ülkelerinde büyük ilgi görmüş ve bu ülkelere ihracat yapılmaya başlanmıştır. Aynı zamanda iç piyasada da önemli bir konuma gelmiştir.",
+      "1998_2": "Geliştirdiğimiz ürünler Türkiye ve Orta Doğu ülkelerinde büyük ilgi görmüş ve bu ülkelere ihracat yapılmaya başlanmıştır.",
+      "2005": "Bantas olarak 750 bin adet 500cc Metal Kutu, Hazırlık Tenekesi, Boya Tenekesi, 10 Litre ve 20 Litre TENEKE 5 KG VE 10 KG Yapıştırıcı Tenekesi ve diğer metal ambalaj ürünlerini üretme kapasitesine ulaşmıştır.",
+      "2008": "Müşterilerimizin 727 farklı ürün çeşidine sahip olup, tüm sektörlere hitap edebilecek 25-50 ürün çeşidi ile hizmet vermekteyiz.",
+      "2009": "Ofset baskı teknolojisi sayesinde 500 ml 1 lt 2 lt 5 lt 10 lt 20 lt ambalajlar üzerine 6 renk baskı yapılabilmektedir.",
+      "2010": "Yeni fabrika binasına taşınma ve üretim kapasitesini artırma.",
+      "2011": "18 litreli 20 lt ambalajlar üretim hattı kuruldu ve 500cc metal ambalaj üretimi başladı.",
+      "2016": "Kalite belgeleri kazanıldı. Türkiye ve Orta Doğu ülkelerinde satış ağı genişletildi. 10 ve 18 litre teneke üretim kapasitesi 1 milyon adete ulaştı.",
+      "2017": "Gelişen ve büyüyen yapımız için yeni bir fabrika kuruldu. Yeni ürünler ve teknolojiler ile üretim kapasitemiz arttırıldı. Çevre dostu ve sürdürülebilir üretim anlayışı benimsendi. Yurtiçi ve yurtdışı pazarlarda güçlü bir konum elde edildi."
+    }
+  },
+  "technology": {
+    "title": "Teknoloji",
+    "subtitle": "Üretim Teknolojilerimiz",
+    "description": "Modern üretim tesislerimizde, son teknoloji makineler ve deneyimli ekibimizle uluslararası kalite standartlarında metal ambalaj üretimi gerçekleştirmekteyiz.",
+    "stats": {
+      "established": "Kuruluş Yılı",
+      "capacity": "Üretim Kapasitesi",
+      "certified": "Sertifikalı"
+    },
+    "metalOffsetBaski": {
+      "title": "BANTAŞ METAL OFSET BASKI FABRİKASI",
+      "description": "Sizlere yenilikçi, gelişmiş, kaliteli ürün ve hizmetler sunmak, müşteri memnuniyetini artırmak hedefiyle Bantaş A.Ş markası ile 2004 yılında kurulmuş olan firmamız, Türkiye'nin ilk metal ofset baskı ve teneke kutu üretim tesislerinden yeni yaklaşımlar için yatırımlarını sürekli büyük tutmaktadır."
+    },
+    "metal-offset-baski": {
+      "subtitle": "METAL OFSET BASKI",
+      "details": "Ofset Baskı fabrikamız en gelişmiş ofset baskısı ve en yüksek kalitede metal ofset baskı, eli tenekeler ile üretim teknolojisi ve metal ofset baskı hizmeti vermektedir. Firmamız Metal Ofset Baskı fabrikası ile Avrupa ve Amerika standartlarında üretim yapmakta olup, Metal Ofset Baskı ve Teneke Kutu Üretim Tesislerinde üretilen ürünler 1500*1100 maksimum 1500*700 maksimum renkte Anahtar Ofset baskı ve aşama işlemini gerçekleştirmektedir. Gelişmiş teknoloji ile üretilen ürünlerimiz ihtiyacınız ve talep doğrultusunda ofset teneke baskı ve ofset filmlerle bir metal ofset baskı hizmeti vermektedir."
+    },
+    "tenekeKutu": {
+      "title": "BANTAŞ TENEKE KUTU FABRİKASI",
+      "description": "Firmamızda plastik, metal, teneke, düşünüp yağ ve Senner zedelenen teneke kutu üretimi yapılmaktadır. Ürünlerimiz uluslararası standartlara uygun olarak, tam otomatik makinelerde üretilmektedir. Firmamız yüksek kalitede teneke kutu üretimi yapabilmek için sürekli yeni teknolojilere yatırım yapmakta, yeni süreçler üzerinde çalışmakta ve bu doğrultuda kalitesinden ödün vermeden üretim yapmaktadır."
+    },
+    "teneke-kutu": {
+      "subtitle": "ÜRETİM SÜRECİ",
+      "details": "Tüm bu aşıl 'da 5 Aşama Üretim Sistemi 'Tüm Bu 2000*2000 Daire Savunma yüzüm sistemi ve 18 18001 2014 İş Sağlık ve Güvenlik yönetim sistemi belgesi görevlendirdi. Ayrı üretimler alt firmamız da üretilmektedir. Teneke ambalajlarımızın boyları müşterinin ve talep doğrultusunda SS Tüm ile 300 mm arasında değişmektedir. Firmamız 750 bin adet 500cc Metal Kutu, Hazırlık Tenekesi, Boya Tenekesi, 10 Litre ve 20 Litre TENEKE 5 KG VE 10 KG Yapıştırıcı Tenekesi ve diğer metal ambalaj ürünlerini üretme kapasitesine ulaşmıştır."
+    },
+    "tenekeEbatlari": {
+      "title": "TENEKE KUTU EBATLARI",
+      "description": "Firmamız 750 bin adet 500cc Metal Kutu, Hazırlık Tenekesi, Boya Tenekesi, 10 Litre ve 20 Litre TENEKE 5 KG VE 10 KG Yapıştırıcı Tenekesi ve diğer metal ambalaj ürünlerini üretme kapasitesine ulaşmıştır. Müşterilerimizin ihtiyaçlarına göre özel ebatlarda üretim yapabilmekteyiz.",
+      "sizes": {
+        "title": "Köşeli Teneke Kutu Ebatlarımız:",
+        "items": {
+          "0": "40×100 mm",
+          "1": "114×110 mm",
+          "2": "99×110 mm",
+          "3": "180×100 mm",
+          "4": "214×215 mm",
+          "5": "Yuvarlak Teneke Kutu Ebatlarımız:",
+          "6": "99 mm",
+          "7": "114 mm",
+          "8": "168 mm",
+          "9": "153 mm",
+          "10": "152 mm"
+        }
+      }
+    }
+  },
+  "certificates": {
+    "title": "Kalite Belgelerimiz",
+    "subtitle": "Kalite ve Standartlar",
+    "description": "Uluslararası kalite standartlarına uygun üretim yapan firmamız, sahip olduğu belgelerle müşterilerimize güven vermektedir.",
+    "intro": {
+      "title": "Kalite Güvencemiz",
+      "text": "Firmamız, kalite yönetim sistemleri, çevre yönetimi, iş sağlığı ve güvenliği, gıda güvenliği konularında uluslararası standartlara sahiptir. Tüm üretim süreçlerimiz bu standartlar doğrultusunda yürütülmektedir."
+    },
+    "iso9001": {
+      "title": "ISO 9001:2015 Kalite Yönetim Sistemi",
+      "description": "ISO 9001:2015 Kalite Yönetim Sistemi belgesi, firmamızın kalite yönetim sisteminin uluslararası standartlara uygun olduğunu göstermektedir. Bu belge, müşteri memnuniyetini artırmak ve sürekli iyileştirme prensiplerine bağlı kalmamızı sağlamaktadır."
+    },
+    "iso14001": {
+      "title": "ISO 14001:2015 Çevre Yönetim Sistemi",
+      "description": "ISO 14001:2015 Çevre Yönetim Sistemi belgesi, firmamızın çevreye duyarlı üretim yapma taahhüdünü göstermektedir. Çevre kirliliğini önlemek, doğal kaynakları verimli kullanmak ve sürdürülebilir üretim yapmak temel ilkelerimizdendir."
+    },
+    "iso45001": {
+      "title": "ISO 45001:2018 İş Sağlığı ve Güvenliği Yönetim Sistemi",
+      "description": "ISO 45001:2018 İş Sağlığı ve Güvenliği Yönetim Sistemi belgesi, çalışanlarımızın sağlığını ve güvenliğini korumak için gerekli tüm önlemleri aldığımızı göstermektedir. Güvenli çalışma ortamı sağlamak önceliğimizdir."
+    },
+    "iso22000": {
+      "title": "ISO 22000:2018 Gıda Güvenliği Yönetim Sistemi",
+      "description": "ISO 22000:2018 Gıda Güvenliği Yönetim Sistemi belgesi, gıda ile temas eden ambalaj üretimimizin uluslararası gıda güvenliği standartlarına uygun olduğunu göstermektedir. Müşterilerimize güvenli ürünler sunmak en önemli sorumluluğumuzdur."
+    },
+    "halal": {
+      "title": "Helal Gıda Sertifikası",
+      "description": "Helal Gıda Sertifikası, üretim süreçlerimizin ve ürünlerimizin İslami kurallara uygun olduğunu göstermektedir. Bu sertifika ile Müslüman müşterilerimize güvenle hizmet vermekteyiz."
+    },
+    "footer": {
+      "title": "Kalite Taahhüdümüz",
+      "description": "Bantaş olarak, kalite standartlarımızı sürekli geliştirmeye ve müşterilerimize en yüksek kalitede ürün ve hizmet sunmaya devam ediyoruz. Tüm belgelerimiz düzenli olarak denetlenmekte ve yenilenmektedir."
+    }
+  },
+  "humanResources": {
+    "title": "İnsan Kaynakları",
+    "subtitle": "İnsan Kaynaklarımız",
+    "description": "Çalışanlarımız en değerli varlığımızdır. İnsan kaynakları politikamız ve işe alım süreçlerimiz hakkında bilgi edinin.",
+    "policy": {
+      "title": "BANTAŞ İnsan Kaynakları Politikası",
+      "paragraph1": "Samp olmuş başarılı, çalışanlarının işini ve olağanüstü iş yapan ve katılan Bantaş Toplumu insan kaynagı politikasıdır.",
+      "paragraph2": "Ölçülebilir yaratıcılık aile ve ölçülebilir samp insan görüşü Olmaması korunması.",
+      "paragraph3": "Farklı katta uzman ve bağlı fikirleriyle bir arada çalışanların yaratıcı potansiyel olmayan.",
+      "paragraph4": "Çalışanlarınızın kapsad ve meslekel gelişmelerini Sn yararlı konuda, eğitimlerine ve geliştirme."
+    },
+    "recruitment": {
+      "title": "BANTAŞ Seçme Ve Yerleştirme Süreci",
+      "paragraph1": "Bantaş'ta başvurulan pozisyona en uyumlu kaynagı seçebilmek için, ölçülebilir yeterlilik karşılaştırması yapılmaktadır.",
+      "paragraph2": "Bantaş'ta başvurulan pozisyona en uyumlu kaynagı seçebilmek için, ölçülebilir yeterlilik karşılaştırması yapılmaktadır. Bu pozisyona yeterlilik karşılaştırması yapılmaktadır.",
+      "paragraph3": "Aday seçim sürecinde tarafsız, nesnel değerleme yapılmasına dikkat ve esas alınmaktadır. İşe alım sürecinde, açık pozisyonlar için gerekli yetkinliklere sahip adayların başvuruları değerlendirilir.",
+      "paragraph4": "Adayın potansiyel tarafsızlık nesnel değerleme yapılmasına dikkat ve esas alınmaktadır. Bantaş Toplum ve çalışanlarınızın borçlanması sürecinde temel yetkinliklere sahip adayların başvuruları değerlendirilir."
+    },
+    "imageSection": {
+      "title": "Çalışanlarımız İle Zirveye Adımızı Yazdırdık",
+      "description": "Çalışanlarımızın hepsi ve güçlü ekibi ile sağladığımız önemli yetkinliklere, üretimimiz üzerli başarılarımızın en büyük etken olan çalışan memnuniyetinin devamını sağlıyoruz."
+    }
+  },
+  "socialResponsibility": {
+    "title": "Sosyal Sorumluluk",
+    "subtitle": "Sosyal Sorumluluğumuz",
+    "description": "Topluma ve çevreye karşı sorumluluğumuzun bilincindeyiz. Sosyal sorumluluk projelerimiz ve çevre duyarlılığımız hakkında bilgi edinin.",
+    "intro": {
+      "title": "SOSYAL SORUMLULUĞUMUZUN BİLİNCİNDEYİZ.",
+      "paragraph1": "Bantaş A.Ş. olarak, sosyal sorumluluk bilinci taşımakın, ülkemizin sosyal kalkınma yönünde.",
+      "paragraph2": "Nasıl ki, çalışanlarımız, ailelerimiz, topluma katkı sağlama konusunda.",
+      "paragraph3": "Topluma Ve Çevreye Destek Olmamız Tarzı faaliyetlere toplamızın sosyal ve ölçme sağlık emeği, zaman ve yatırım."
+    },
+    "projects": {
+      "title": "Eğitim Alan Seni Destekliyor Projesi",
+      "environment": {
+        "title": "Doğal kaynakların korunması bizim görevimizdir",
+        "paragraph1": "Bantaş A.Ş. bütünleşme, olumunu fikirlerin kışımız, geri dönüşüm kazandırmaktadır için.",
+        "paragraph2": "Diğer olarak ki cins kapı atik kullanma iştiraksiz geri dönüşümü sağlamak, yeniş tam tarafları."
+      },
+      "community": {
+        "title": "Toplum ve Çevre Destek İnitiatifleri",
+        "paragraph1": "Gelişmekte olanınızı toplamızın sosyal ve ölçme sağlık emeği, zaman ve yatırım.",
+        "paragraph2": "Kullanılan yasan etkinliklere yapılmaktadır öncelikle verip katkıları desteklemektedir."
+      },
+      "education": {
+        "title": "Eğitim ve Gelecek Nesiller",
+        "paragraph1": "Gelişmekte ortama etkinlerin güvenli ile kapı yarıştırmaları etkinliklere.",
+        "paragraph2": "Gelir ortama etkinlerin güvenli ile kapı yarıştırmaları etkinliklere yapılmaktadır."
+      }
+    },
+    "footer": {
+      "title": "Sosyal Sorumluluk Taahhdümüz",
+      "description": "Bantaş olarak, topluma ve çevreye karşı sorumluluğumuzun bilincinde olarak, sürdürülebilir projeler geliştirmeye ve gelecek nesillere daha yaşanabilir bir dünya bırakmaya devam ediyoruz."
+    }
+  },
+  "products": {
+    "cheese": {
+      "title": "Peynir Tenekeleri",
+      "subtitle": "Gıda Ambalaj Çözümleri",
+      "description": "Peynir ve süt ürünleri için özel tasarlanmış, hijyenik ve dayanıklı metal ambalaj çözümlerimiz ile ürünlerinizin tazeliğini koruyun.",
+      "intro": {
+        "title": "Peynir Saklama Çözümlerimiz",
+        "paragraph1": "Peynir tenekelerimiz, peynirin tazeliğini ve lezzetini uzun süre korumak için özel olarak tasarlanmıştır.",
+        "paragraph2": "Gıda güvenliği standartlarına uygun, paslanmaz ve hijyenik malzemelerden üretilmektedir.",
+        "paragraph3": "Farklı boyut ve kapasitelerde üretim yaparak, her türlü ihtiyaca cevap veriyoruz."
+      },
+      "features": {
+        "title": "Ürün Özellikleri",
+        "feature1": {
+          "title": "Hijyenik Üretim",
+          "description": "Gıda güvenliği standartlarına uygun, hijyenik koşullarda üretilir."
+        },
+        "feature2": {
+          "title": "Hava Geçirmez Kapak",
+          "description": "Özel kapak sistemi ile ürünün tazeliğini uzun süre korur."
+        },
+        "feature3": {
+          "title": "Özel Tasarım",
+          "description": "Markanıza özel baskı ve tasarım seçenekleri mevcuttur."
+        }
+      },
+      "specifications": {
+        "title": "Teknik Özellikler",
+        "spec1": {
+          "label": "Malzeme",
+          "value": "Gıda sınıfı teneke"
+        },
+        "spec2": {
+          "label": "Kapasite",
+          "value": "5kg - 20kg arası"
+        },
+        "spec3": {
+          "label": "Kaplama",
+          "value": "İç yüzey gıda lakı"
+        },
+        "spec4": {
+          "label": "Kapak Tipi",
+          "value": "Hava geçirmez conta"
+        },
+        "spec5": {
+          "label": "Baskı",
+          "value": "Ofset baskı mevcut"
+        },
+        "spec6": {
+          "label": "Sertifika",
+          "value": "ISO 9001, Gıda Güvenliği"
+        }
+      },
+      "cta": {
+        "title": "Peynir Tenekesi Siparişi",
+        "description": "Kaliteli peynir tenekelerimiz hakkında detaylı bilgi almak ve sipariş vermek için bizimle iletişime geçin."
+      }
+    },
+    "oil": {
+      "title": "Yağ Tenekeleri",
+      "subtitle": "Yağ Saklama Çözümleri",
+      "description": "Zeytinyağı, ayçiçek yağı ve diğer sıvı yağlar için özel tasarlanmış, sızdırmaz ve dayanıklı metal ambalaj çözümlerimiz.",
+      "intro": {
+        "title": "Yağ Saklama Çözümlerimiz",
+        "paragraph1": "Yağ tenekelerimiz, sıvı yağların güvenli ve hijyenik bir şekilde saklanması için tasarlanmıştır.",
+        "paragraph2": "Sızdırmaz kapak sistemi ve dayanıklı yapısı ile uzun ömürlü kullanım sağlar.",
+        "paragraph3": "Zeytinyağı, ayçiçek yağı ve diğer tüm sıvı yağlar için uygundur."
+      },
+      "features": {
+        "title": "Ürün Özellikleri",
+        "feature1": {
+          "title": "Sızdırmaz Yapı",
+          "description": "Özel conta sistemi ile tamamen sızdırmaz koruma sağlar."
+        },
+        "feature2": {
+          "title": "Kolay Kullanım",
+          "description": "Pratik kapak sistemi ile kolay açılıp kapanır."
+        },
+        "feature3": {
+          "title": "Dayanıklı Malzeme",
+          "description": "Paslanmaz ve darbelere dayanıklı metal yapı."
+        }
+      },
+      "specifications": {
+        "title": "Teknik Özellikler",
+        "spec1": {
+          "label": "Malzeme",
+          "value": "Galvanizli sac"
+        },
+        "spec2": {
+          "label": "Kapasite",
+          "value": "5L - 20L arası"
+        },
+        "spec3": {
+          "label": "Kaplama",
+          "value": "İç yüzey koruyucu kaplama"
+        },
+        "spec4": {
+          "label": "Kapak Tipi",
+          "value": "Vidalı sızdırmaz kapak"
+        },
+        "spec5": {
+          "label": "Kulak",
+          "value": "Taşıma kulağı mevcut"
+        },
+        "spec6": {
+          "label": "Baskı",
+          "value": "Özel tasarım baskı"
+        }
+      },
+      "cta": {
+        "title": "Yağ Tenekesi Siparişi",
+        "description": "Yüksek kaliteli yağ tenekelerimiz hakkında detaylı bilgi almak ve sipariş vermek için bizimle iletişime geçin."
+      }
+    },
+    "olive": {
+      "title": "Zeytin / Turşu Tenekeleri",
+      "subtitle": "Salamura Ürün Ambalajı",
+      "description": "Zeytin, turşu ve salamura ürünler için özel tasarlanmış, asit dirençli ve hijyenik metal ambalaj çözümlerimiz.",
+      "intro": {
+        "title": "Salamura Ürün Çözümlerimiz",
+        "paragraph1": "Zeytin ve turşu tenekelerimiz, salamura ürünlerin güvenli saklanması için özel olarak tasarlanmıştır.",
+        "paragraph2": "Asit dirençli iç kaplama ile ürünün tadını ve kalitesini korur.",
+        "paragraph3": "Farklı boyutlarda üretim ile her türlü ihtiyaca uygun çözümler sunuyoruz."
+      },
+      "features": {
+        "title": "Ürün Özellikleri",
+        "feature1": {
+          "title": "Asit Direnci",
+          "description": "Özel iç kaplama ile salamuraya karşı tam koruma."
+        },
+        "feature2": {
+          "title": "Hijyenik Üretim",
+          "description": "Gıda güvenliği standartlarına uygun üretim."
+        },
+        "feature3": {
+          "title": "Uzun Ömürlü",
+          "description": "Paslanmaya karşı dirençli, uzun ömürlü kullanım."
+        }
+      },
+      "specifications": {
+        "title": "Teknik Özellikler",
+        "spec1": {
+          "label": "Malzeme",
+          "value": "Asit dirençli teneke"
+        },
+        "spec2": {
+          "label": "Kapasite",
+          "value": "5kg - 25kg arası"
+        },
+        "spec3": {
+          "label": "Kaplama",
+          "value": "Özel asit dirençli lak"
+        },
+        "spec4": {
+          "label": "Kapak Tipi",
+          "value": "Sızdırmaz kapak sistemi"
+        },
+        "spec5": {
+          "label": "Kulak",
+          "value": "Güçlendirilmiş taşıma kulağı"
+        },
+        "spec6": {
+          "label": "Baskı",
+          "value": "Renkli ofset baskı"
+        }
+      },
+      "cta": {
+        "title": "Zeytin/Turşu Tenekesi Siparişi",
+        "description": "Salamura ürünler için özel tenekelerimiz hakkında detaylı bilgi almak ve sipariş vermek için bizimle iletişime geçin."
+      }
+    },
+    "chemical": {
+      "title": "Tiner / Antifriz / Madeni Yağ Tenekeleri",
+      "subtitle": "Kimyasal Ürün Ambalajı",
+      "description": "Tiner, antifriz, madeni yağ ve diğer kimyasal ürünler için özel tasarlanmış, güvenli ve dayanıklı metal ambalaj çözümlerimiz.",
+      "intro": {
+        "title": "Kimyasal Ürün Çözümlerimiz",
+        "paragraph1": "Kimyasal ürün tenekelerimiz, tehlikeli maddelerin güvenli saklanması için özel olarak tasarlanmıştır.",
+        "paragraph2": "Kimyasal dirençli iç kaplama ve sızdırmaz kapak sistemi ile maksimum güvenlik sağlar.",
+        "paragraph3": "UN standartlarına uygun üretim ile uluslararası taşımacılıkta kullanıma uygundur."
+      },
+      "features": {
+        "title": "Ürün Özellikleri",
+        "feature1": {
+          "title": "Kimyasal Direnç",
+          "description": "Özel kaplama ile kimyasal maddelere karşı tam koruma."
+        },
+        "feature2": {
+          "title": "Güvenlik",
+          "description": "Sızdırmaz kapak ve güvenlik contası ile maksimum güvenlik."
+        },
+        "feature3": {
+          "title": "Standartlara Uygunluk",
+          "description": "UN ve ADR standartlarına uygun üretim."
+        }
+      },
+      "specifications": {
+        "title": "Teknik Özellikler",
+        "spec1": {
+          "label": "Malzeme",
+          "value": "Kimyasal dirençli sac"
+        },
+        "spec2": {
+          "label": "Kapasite",
+          "value": "1L - 20L arası"
+        },
+        "spec3": {
+          "label": "Kaplama",
+          "value": "Kimyasal dirençli epoksi"
+        },
+        "spec4": {
+          "label": "Kapak Tipi",
+          "value": "Güvenlik contası"
+        },
+        "spec5": {
+          "label": "Sertifika",
+          "value": "UN onaylı"
+        },
+        "spec6": {
+          "label": "Etiket",
+          "value": "Tehlike işaretleri"
+        }
+      },
+      "cta": {
+        "title": "Kimyasal Ürün Tenekesi Siparişi",
+        "description": "Kimyasal ürünler için güvenli tenekelerimiz hakkında detaylı bilgi almak ve sipariş vermek için bizimle iletişime geçin."
+      }
+    }
+  },
+  "genelKurul": {
+    "title": "Genel Kurul Bilgileri",
+    "subtitle": "Uyum Raporları",
+    "description": "Şirketimizin genel kurul toplantıları ve kararları",
+    "meetings": "Genel Kurul Toplantıları",
+    "ordinary": "Olağan",
+    "extraordinary": "Olağanüstü",
+    "totalMeetings": "Toplam Toplantı",
+    "ordinaryMeetings": "Olağan Genel Kurul",
+    "extraordinaryMeetings": "Olağanüstü Genel Kurul",
+    "activeMeetings": "Aktif Toplantı",
+    "between": "Arası",
+    "pdfDocument": "PDF Dökümanı",
+    "infoTitle": "Genel Kurul Bilgilendirme",
+    "infoDescription": "Genel Kurul toplantılarımız, Türk Ticaret Kanunu ve Sermaye Piyasası Mevzuatı hükümlerine uygun olarak gerçekleştirilmektedir. Toplantı gündem maddeleri, katılım bilgileri ve alınan kararlar Kamuyu Aydınlatma Platformu (KAP) üzerinden kamuya duyurulmaktadır.",
+    "ctaTitle": "Yatırımcı İlişkileri",
+    "ctaDescription": "Genel kurul toplantıları ve diğer kurumsal bilgiler hakkında detaylı bilgi almak için yatırımcı ilişkileri sayfalarımızı inceleyebilirsiniz."
+  },
+  "faaliyetRaporlari": {
+    "title": "Faaliyet Raporları",
+    "subtitle": "Faaliyet Raporları",
+    "description": "Şirketimizin yıllık ve dönemsel faaliyet raporları",
+    "pdfDocument": "PDF Dökümanı",
+    "infoTitle": "Faaliyet Raporları Hakkında",
+    "infoDescription": "Faaliyet raporlarımız, şirketimizin finansal durumu, operasyonel performansı ve stratejik hedefleri hakkında detaylı bilgi içermektedir. Raporlar, Sermaye Piyasası Kurulu düzenlemelerine uygun olarak hazırlanmakta ve kamuya açıklanmaktadır."
+  },
+  "home": {
+    "topBar": {
+      "email": "info@bantas.com.tr",
+      "phone": "+90 (266) 733 20 20"
+    },
+    "hero": {
+      "companyName": "Bantaş A.Ş.",
+      "cta": "İletişim",
+      "prev": "Önceki slayt",
+      "next": "Sonraki slayt",
+      "tagline": "Metal ambalaj üretiminde güvenilir çözüm ortağınız."
+    },
+    "quickActions": {
+      "quoteTitle": "Teklif Al",
+      "quoteDesc": "İhtiyacınıza özel ambalaj çözümleri için bize ulaşın.",
+      "kvkk": "Kişisel verileriniz, 6698 sayılı KVKK kapsamında korunmaktadır. Aydınlatma metnimizi inceleyebilirsiniz.",
+      "catalogTitle": "Katalog",
+      "catalogDesc": "Ürün gruplarımızı PDF katalog üzerinden inceleyin."
+    },
+    "products": {
+      "title": "Ürünler",
+      "olive": "Zeytin Tenekeleri",
+      "cheese": "Peynir Tenekeleri",
+      "oil": "Yağ Tenekeleri",
+      "other": "Diğer Tenekeler"
+    },
+    "features": {
+      "reliableTitle": "Güvenilir Hizmet",
+      "reliableDesc": "Uzun yıllara dayanan iş ortaklıkları ve şeffaf süreçlerle yanınızdayız.",
+      "experienceTitle": "31 Yıllık Eşsiz Tecrübe",
+      "experienceDesc": "Metal ambalaj üretiminde köklü bilgi birikimi ve sürekli gelişen kapasitemiz.",
+      "qualityTitle": "Yüksek Kaliteli Ürünler",
+      "qualityDesc": "Uluslararası standartlara uygun üretim ve titiz kalite kontrol süreçleri."
+    },
+    "qualitySection": {
+      "title": "Bantaş Kalitesi Marka Değerinizi Arttırır",
+      "body": "Bantaş, kaliteli ve güvenilir teneke ambalaj üretiminin yanı sıra yüksek baskı teknolojisi sayesinde ürünlerinizin görsel kalitesini arttırıp müşterilerinizin satın alma kararlarına etki yaratır.",
+      "beforeLabel": "Boş Teneke",
+      "afterLabel": "Baskılı Teneke",
+      "dragHint": "Kaydırarak karşılaştırın"
+    },
+    "intro": {
+      "title": "Bantaş Teneke Ambalaj",
+      "titleHighlight": "Çözümleri",
+      "body": "Bandırma’daki modern tesislerimizde yüksek kapasiteyle üretim yapıyor; gıda ve endüstriyel uygulamalar için güvenilir teneke ambalaj sunuyoruz."
+    },
+    "about": {
+      "eyebrow": "HAKKIMIZDA",
+      "title": "Bantaş",
+      "p1": "Bantaş A.Ş., metal ambalaj sektöründe faaliyet gösteren, yenilikçi ve sürdürülebilir üretim anlayışıyla öne çıkan bir kuruluştur.",
+      "p2": "Müşteri ihtiyaçlarına özel çözümler geliştirirken çevreye duyarlı üretim ve iş güvenliğini önceliklendiriyoruz.",
+      "p3": "Türkiye ve yurtdışı pazarlarda güçlü bir tedarikçi olarak, kalite ve zamanında teslimatla iş ortaklarımıza değer katıyoruz."
+    },
+    "footer": {
+      "addressLine1": "Bandırma OSB, Balıkesir",
+      "kurumsalTitle": "Kurumsal",
+      "investorTitle": "Yatırımcı İlişkileri",
+      "menuTitle": "Menü",
+      "linkAbout": "Hakkımızda",
+      "linkHistory": "Tarihçe",
+      "linkTech": "Teknoloji",
+      "linkCerts": "Kalite Belgelerimiz",
+      "linkBilgi": "Bilgi Toplumu Hizmetleri",
+      "linkBoard": "Yönetim Kurulu",
+      "linkPolicies": "Politikalar",
+      "linkGK": "Genel Kurul Bilgileri",
+      "linkGallery": "Galeri",
+      "linkContact": "İletişim",
+      "linkNewsletter": "E-Bülten"
+    },
+    "beforeAfter": {
+      "title": "Üretimde dönüşüm",
+      "before": "Önce",
+      "after": "Sonra",
+      "beforeCaption": "Planlama ve malzeme seçimi",
+      "afterCaption": "Modern hat ve izlenebilir kalite"
+    },
+    "megaMenu": {
+      "panelTitle": "Kurumsal",
+      "close": "Kapat",
+      "aboutTitle": "Hakkımızda",
+      "linkAbout": "Şirket Profili",
+      "linkHistory": "Tarihçe",
+      "linkMission": "Misyon & Vizyon",
+      "linkTech": "Teknoloji",
+      "linkQuality": "Kalite Belgelerimiz",
+      "linkKvkk": "KVKK & Aydınlatma"
+    }
   }
 }

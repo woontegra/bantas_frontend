@@ -1,0 +1,12 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#c8cdd4"/>
+  <rect x="250" y="80" width="300" height="420" rx="18" ry="18" fill="#b0b8c4"/>
+  <rect x="240" y="70" width="320" height="50" rx="10" ry="10" fill="#9aa3ae"/>
+  <rect x="240" y="480" width="320" height="35" rx="8" ry="8" fill="#9aa3ae"/>
+  <ellipse cx="400" cy="95" rx="150" ry="20" fill="#8b9299"/>
+  <ellipse cx="400" cy="487" rx="150" ry="16" fill="#8b9299"/>
+  <rect x="260" y="120" width="280" height="360" rx="6" ry="6" fill="#bdc5cf"/>
+  <line x1="280" y1="120" x2="280" y2="480" stroke="#a8b0bb" stroke-width="2"/>
+  <line x1="520" y1="120" x2="520" y2="480" stroke="#a8b0bb" stroke-width="2"/>
+  <text x="400" y="320" font-family="sans-serif" font-size="28" fill="#7a8490" text-anchor="middle">Boş Teneke</text>
+</svg>

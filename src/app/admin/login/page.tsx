@@ -1,120 +1,89 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { adminLogin } from "@/lib/adminApi";
 
 export default function AdminLoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    setError('');
+    setError("");
     setLoading(true);
-
     try {
-      const res = await fetch('http://localhost:5000/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        throw new Error(data.error || 'Giriş başarısız');
-      }
-
-      // Save token
-      localStorage.setItem('admin_token', data.token);
-      localStorage.setItem('admin_user', JSON.stringify(data.user));
-
-      // Redirect to dashboard
-      router.push('/admin/dashboard');
-    } catch (err: any) {
-      setError(err.message || 'Bir hata oluştu');
+      await adminLogin(email, password);
+      router.push("/admin");
+    } catch (err) {
+      setError((err as Error).message);
     } finally {
       setLoading(false);
     }
-  };
+  }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-light text-white mb-2">BANTAS</h1>
-          <p className="text-slate-400 text-sm">Admin Panel</p>
+    <div className="flex min-h-screen items-center justify-center bg-[#0f1028]">
+      <div className="w-full max-w-sm">
+        <div className="mb-8 text-center">
+          <div className="mb-3 flex items-baseline justify-center gap-0 font-bold">
+            <span className="text-3xl text-red-400">BAN</span>
+            <span className="text-3xl text-white">TAŞ</span>
+          </div>
+          <p className="text-sm text-slate-400">Admin Paneli</p>
         </div>
 
-        {/* Login Card */}
-        <div className="bg-white rounded-2xl shadow-2xl p-8">
-          <h2 className="text-2xl font-light text-gray-900 mb-6">Giriş Yap</h2>
+        <form
+          onSubmit={handleSubmit}
+          className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur-sm"
+        >
+          <h1 className="mb-6 text-lg font-semibold text-white">Giriş Yap</h1>
 
           {error && (
-            <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
+            <div className="mb-4 rounded-lg bg-red-500/20 px-4 py-3 text-sm text-red-300">
               {error}
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* Email */}
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent outline-none transition"
-                placeholder="admin@bantas.com"
-              />
-            </div>
-
-            {/* Password */}
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
-                Şifre
-              </label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent outline-none transition"
-                placeholder="••••••••"
-              />
-            </div>
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full bg-slate-900 hover:bg-slate-800 text-white py-2.5 rounded-lg font-medium transition disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading ? 'Giriş yapılıyor...' : 'Giriş Yap'}
-            </button>
-          </form>
-
-          {/* Demo Credentials */}
-          <div className="mt-6 p-4 bg-slate-50 rounded-lg">
-            <p className="text-xs text-slate-600 font-medium mb-2">Demo Giriş Bilgileri:</p>
-            <p className="text-xs text-slate-500">Email: admin@bantas.com</p>
-            <p className="text-xs text-slate-500">Şifre: admin123</p>
+          <div className="mb-4">
+            <label className="mb-1.5 block text-xs font-medium text-slate-300">
+              E-posta
+            </label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/30"
+              placeholder="admin@bantas.com"
+            />
           </div>
-        </div>
 
-        {/* Footer */}
-        <p className="text-center text-slate-400 text-sm mt-6">
-          © 2026 Bantas. Tüm hakları saklıdır.
-        </p>
+          <div className="mb-6">
+            <label className="mb-1.5 block text-xs font-medium text-slate-300">
+              Şifre
+            </label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              className="w-full rounded-lg border border-white/10 bg-white/10 px-4 py-2.5 text-sm text-white placeholder-slate-500 outline-none transition focus:border-brand focus:ring-2 focus:ring-brand/30"
+              placeholder="••••••••"
+            />
+          </div>
+
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full rounded-lg bg-brand py-2.5 text-sm font-semibold text-white transition hover:bg-brand-muted disabled:opacity-60"
+          >
+            {loading ? "Giriş yapılıyor…" : "Giriş Yap"}
+          </button>
+        </form>
       </div>
     </div>
   );
