@@ -316,7 +316,7 @@ export default function NewsAdminPage() {
       if (imageFile) {
         const fd = new FormData();
         fd.append("file", imageFile);
-        const uploaded = await adminUpload("/api/upload", fd);
+        const uploaded = await adminUpload("/api/upload", fd) as any;
         if (uploaded?.url) imageUrl = uploaded.url;
       }
 
