@@ -1,9 +1,9 @@
 "use client";
 
+import { Factory, Award, Globe, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Link } from "@/navigation";
-import { ChevronDown } from "lucide-react";
-import { useEffect, useState } from "react";
 
 export type HeroSlidePayload = {
   image: string;
@@ -13,6 +13,8 @@ export type HeroSlidePayload = {
   ctaLink: string;
 };
 
+export type HeroFeature = { label: string; href: string };
+
 function isLocalUpload(src: string) {
   return (
     src.startsWith("http://localhost") ||
@@ -21,16 +23,55 @@ function isLocalUpload(src: string) {
   );
 }
 
+function CircleImage({
+  src,
+  alt,
+  fallbackIcon: Icon,
+  fallbackColor,
+}: {
+  src?: string;
+  alt: string;
+  fallbackIcon: React.ElementType;
+  fallbackColor: string;
+}) {
+  const [error, setError] = useState(false);
+  if (!src || error) {
+    return (
+      <div
+        className={`absolute inset-0 flex items-center justify-center ${fallbackColor}`}
+      >
+        <Icon className="w-14 h-14 opacity-70" />
+      </div>
+    );
+  }
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="object-cover rounded-full"
+      sizes="(max-width: 768px) 200px, 320px"
+      unoptimized={isLocalUpload(src)}
+      onError={() => setError(true)}
+    />
+  );
+}
+
 export function HomeHeroClient({
   slides,
-  companyName,
-  tagline,
+  title,
+  description,
+  features,
+  ctaText,
+  ctaLink,
 }: {
   slides: HeroSlidePayload[];
-  companyName: string;
-  tagline: string;
+  title: string;
+  description: string;
+  features: HeroFeature[];
+  ctaText: string;
+  ctaLink: string;
 }) {
-  const [index, setIndex] = useState(0);
   const [enter, setEnter] = useState(false);
 
   useEffect(() => {
@@ -38,170 +79,197 @@ export function HomeHeroClient({
     return () => cancelAnimationFrame(id);
   }, []);
 
-  useEffect(() => {
-    if (slides.length <= 1) return;
-    const t = setInterval(
-      () => setIndex((i) => (i + 1) % slides.length),
-      8000,
-    );
-    return () => clearInterval(t);
-  }, [slides.length]);
-
-  const current = slides[index] ?? slides[0];
+  const main = slides[0];
+  const topRight = slides[1];
+  const bottomLeft = slides[2];
 
   return (
-    <section className="relative min-h-[88vh] w-full overflow-hidden bg-[#06061a]">
-      {/* Arka plan slaytları + Ken Burns */}
-      <div className="absolute inset-0">
-        {slides.map((s, i) => (
-          <div
-            key={`${s.image}-${i}`}
-            className={`absolute inset-0 transition-opacity duration-[1200ms] ease-out ${
-              i === index ? "z-[1] opacity-100" : "z-0 opacity-0"
-            }`}
-            aria-hidden={i !== index}
-          >
-            <div className="absolute inset-0 overflow-hidden">
-              <div className="h-full w-full animate-hero-ken-burns will-change-transform">
-                <Image
-                  src={s.image}
-                  alt=""
-                  fill
-                  priority={i === 0}
-                  className="object-cover"
-                  sizes="100vw"
-                  unoptimized={isLocalUpload(s.image)}
-                />
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+    <section className="relative min-h-[88vh] w-full overflow-hidden">
+      {/* Navy gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#0f2a5a] to-[#1e3a8a]" />
 
-      {/* Cam efekti + renk */}
+      {/* Radial glow center-right */}
+      <div className="absolute top-1/2 right-1/3 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+
+      {/* Grain texture */}
       <div
-        className="absolute inset-0 z-[2] bg-gradient-to-br from-brand/35 via-transparent to-accent-red/20 mix-blend-overlay"
-        aria-hidden
+        className="absolute inset-0 opacity-[0.025] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+          backgroundSize: "200px 200px",
+        }}
       />
+
+      {/* Subtle grid */}
       <div
-        className="absolute inset-0 z-[2] bg-gradient-to-t from-[#030308] via-brand-dark/75 to-brand/45"
-        aria-hidden
-      />
-      <div
-        className="absolute inset-0 z-[2] bg-[radial-gradient(ellipse_90%_70%_at_50%_20%,rgba(255,255,255,0.12),transparent_55%)]"
+        className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:linear-gradient(rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:64px_64px]"
         aria-hidden
       />
 
-      {/* İnce ızgara */}
-      <div
-        className="pointer-events-none absolute inset-0 z-[3] opacity-[0.2] [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:72px_72px]"
-        aria-hidden
-      />
+      {/* Content */}
+      <div className="relative z-10 min-h-[88vh] flex items-center pt-20 pb-10">
+        <div className="w-full max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 xl:gap-20 items-center">
 
-      {/* Dekoratif halka (çok hafif) */}
-      <div
-        className="pointer-events-none absolute -left-[20%] top-1/2 z-[3] h-[min(90vw,720px)] w-[min(90vw,720px)] -translate-y-1/2 rounded-full border border-white/[0.07] opacity-50"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -right-[15%] top-[10%] z-[3] h-[min(70vw,520px)] w-[min(70vw,520px)] rounded-full border border-white/[0.05]"
-        aria-hidden
-      />
-
-      {/* İçerik */}
-      <div className="relative z-10 mx-auto flex min-h-[88vh] max-w-7xl flex-col items-center justify-center px-4 pb-28 pt-28 text-center md:pb-32">
-        <div
-          className={`max-w-5xl transition-opacity duration-700 ${
-            enter ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <p
-            className={`mb-5 inline-flex items-center gap-3 text-[11px] font-semibold uppercase tracking-[0.35em] text-white/75 sm:text-xs ${
-              enter ? "animate-hero-fade-up" : ""
-            }`}
-          >
-            <span className="h-px w-8 bg-gradient-to-r from-transparent to-white/50 sm:w-12" />
-            {companyName}
-            <span className="h-px w-8 bg-gradient-to-l from-transparent to-white/50 sm:w-12" />
-          </p>
-
-          <h1
-            className={`break-words text-balance bg-gradient-to-b from-white via-white to-white/80 bg-clip-text text-4xl font-bold leading-[1.08] tracking-tight text-transparent drop-shadow-[0_4px_32px_rgba(0,0,0,0.45)] sm:text-5xl md:text-6xl lg:text-7xl ${
-              enter ? "animate-hero-fade-up-delay" : ""
-            }`}
-          >
-            {current.title}
-          </h1>
-
-          {current.subtitle ? (
-            <p
-              className={`mx-auto mt-8 max-w-2xl text-base leading-relaxed text-white/85 md:text-lg md:leading-relaxed ${
-                enter ? "animate-hero-fade-up-delay-2" : ""
+            {/* ── Left ── */}
+            <div
+              className={`space-y-7 transition-all duration-700 ${
+                enter ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
               }`}
             >
-              {current.subtitle}
-            </p>
-          ) : null}
+              {/* Title */}
+              <h1 className="text-3xl sm:text-4xl xl:text-5xl font-normal leading-snug text-white tracking-tight">
+                {title}
+              </h1>
 
-          <div
-            className={`mt-12 flex flex-col items-center gap-6 sm:flex-row sm:justify-center ${
-              enter ? "animate-hero-fade-up-delay-3" : ""
-            }`}
-          >
-            <Link
-              href={current.ctaLink}
-              className="group relative inline-flex items-center justify-center overflow-hidden rounded-full px-10 py-4 text-sm font-semibold text-brand shadow-[0_0_0_1px_rgba(255,255,255,0.25)] transition duration-300 hover:scale-[1.02] hover:shadow-[0_20px_50px_-12px_rgba(47,47,143,0.55)]"
+              {/* Description */}
+              <p className="text-base sm:text-lg font-light text-white/70 leading-relaxed max-w-xl">
+                {description}
+              </p>
+
+              {/* Feature list */}
+              <div className="space-y-3 pt-1">
+                {features.map((f, i) => (
+                  <Link
+                    key={i}
+                    href={f.href as "/"}
+                    className="flex items-center gap-3 text-sm font-light text-white/60 hover:text-emerald-400 transition-colors duration-300 group"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0 group-hover:scale-150 transition-transform duration-300" />
+                    <span className="group-hover:translate-x-1 transition-transform duration-300">
+                      {f.label}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <Link
+                href={ctaLink as "/"}
+                className="inline-flex items-center gap-2 mt-2 px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-sm font-medium rounded-md transition-all duration-300 shadow-lg shadow-emerald-700/30 hover:shadow-emerald-500/40 group"
+              >
+                {ctaText}
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+            </div>
+
+            {/* ── Right — floating circles ── */}
+            <div
+              className={`relative h-[520px] sm:h-[600px] lg:h-[680px] transition-all duration-1000 delay-300 ${
+                enter ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
             >
-              <span className="absolute inset-0 bg-white/95 backdrop-blur-md transition duration-300 group-hover:bg-white" />
-              <span className="relative flex items-center gap-2">
-                {current.ctaText}
-                <span className="inline-block transition-transform duration-300 group-hover:translate-x-0.5">
-                  →
-                </span>
-              </span>
-            </Link>
-            <span className="hidden h-10 w-px bg-white/20 sm:block" aria-hidden />
-            <p className="max-w-xs text-left text-xs leading-relaxed text-white/50 sm:max-w-sm">
-              {tagline}
-            </p>
-          </div>
-        </div>
+              {/* Top-right circle */}
+              <div
+                className="absolute top-4 right-4 sm:top-8 sm:right-8 lg:top-10 lg:right-10 w-36 h-36 sm:w-44 sm:h-44 lg:w-52 lg:h-52 z-10"
+                style={{ animation: "heroFloat 6s ease-in-out infinite" }}
+              >
+                <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-2xl" />
+                <div className="relative w-full h-full rounded-full bg-gradient-to-br from-white/90 to-white/80 border border-white/30 shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-500">
+                  <CircleImage
+                    src={topRight?.image}
+                    alt={topRight?.title ?? ""}
+                    fallbackIcon={Award}
+                    fallbackColor="bg-gradient-to-br from-blue-100 to-purple-100 text-blue-600"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-full" />
+                </div>
+                <div className="absolute -inset-1.5 rounded-full border border-white/15" />
+              </div>
 
-        {/* Slayt noktaları */}
-        {slides.length > 1 ? (
-          <div
-            className="absolute bottom-24 left-1/2 z-20 flex -translate-x-1/2 gap-2 md:bottom-28"
-            role="tablist"
-            aria-label="Hero slaytları"
-          >
-            {slides.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                role="tab"
-                aria-selected={i === index}
-                aria-label={`Slayt ${i + 1}`}
-                onClick={() => setIndex(i)}
-                className={`h-1.5 rounded-full transition-all duration-500 ${
-                  i === index
-                    ? "w-10 bg-white shadow-[0_0_16px_rgba(255,255,255,0.5)]"
-                    : "w-1.5 bg-white/35 hover:bg-white/55"
-                }`}
-              />
-            ))}
-          </div>
-        ) : null}
+              {/* Center (main) circle */}
+              <div
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 xl:w-96 xl:h-96 z-20"
+                style={{
+                  animation: "heroFloat 8s ease-in-out infinite",
+                  animationDelay: "0.5s",
+                }}
+              >
+                <div className="absolute inset-0 rounded-full bg-emerald-500/15 blur-3xl" />
+                <div className="relative w-full h-full rounded-full bg-gradient-to-br from-white/95 to-white/85 border border-white/25 shadow-2xl overflow-hidden hover:scale-[1.03] transition-transform duration-500">
+                  {main?.image ? (
+                    <CircleImage
+                      src={main.image}
+                      alt={main.title}
+                      fallbackIcon={Factory}
+                      fallbackColor="bg-gradient-to-br from-gray-100 to-gray-50 text-gray-600"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-gradient-to-br from-gray-100 to-white">
+                      <Factory className="w-16 h-16 text-gray-500 mb-2" />
+                      <p className="text-gray-700 font-light text-base">Metal Ambalaj</p>
+                      <p className="text-gray-400 text-sm font-light">Premium Kalite</p>
+                    </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/15 to-transparent rounded-full" />
+                </div>
+                <div className="absolute -inset-2 rounded-full border border-white/20" />
+              </div>
 
-        {/* Kaydırma ipucu */}
-        <div
-          className="absolute bottom-8 left-1/2 z-20 flex -translate-x-1/2 flex-col items-center gap-1 text-[10px] font-medium uppercase tracking-[0.25em] text-white/40"
-          aria-hidden
-        >
-          <span className="animate-hero-scroll-hint">
-            <ChevronDown className="h-5 w-5" strokeWidth={1.5} />
-          </span>
+              {/* Bottom-left circle */}
+              <div
+                className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 lg:bottom-10 lg:left-10 w-40 h-40 sm:w-48 sm:h-48 lg:w-56 lg:h-56 z-10"
+                style={{
+                  animation: "heroFloat 7s ease-in-out infinite",
+                  animationDelay: "1s",
+                }}
+              >
+                <div className="absolute inset-0 rounded-full bg-emerald-500/20 blur-2xl" />
+                <div className="relative w-full h-full rounded-full bg-gradient-to-br from-white/90 to-white/80 border border-white/30 shadow-2xl overflow-hidden hover:scale-105 transition-transform duration-500">
+                  <CircleImage
+                    src={bottomLeft?.image}
+                    alt={bottomLeft?.title ?? ""}
+                    fallbackIcon={Globe}
+                    fallbackColor="bg-gradient-to-br from-emerald-100 to-cyan-100 text-emerald-600"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent rounded-full" />
+                </div>
+                <div className="absolute -inset-1.5 rounded-full border border-white/15" />
+              </div>
+
+              {/* Bottom icon bar */}
+              <div
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-1 sm:gap-2"
+                style={{
+                  animation: "heroFloat 9s ease-in-out infinite",
+                  animationDelay: "2s",
+                }}
+              >
+                {slides.slice(0, 5).map((s, i) => (
+                  <div
+                    key={i}
+                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm overflow-hidden flex-shrink-0 hover:scale-110 transition-transform duration-300"
+                  >
+                    <div className="relative w-full h-full">
+                      {s.image && (
+                        <Image
+                          src={s.image}
+                          alt={s.title}
+                          fill
+                          className="object-cover rounded-full"
+                          sizes="48px"
+                          unoptimized={isLocalUpload(s.image)}
+                        />
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
+
+      {/* Float keyframes */}
+      <style jsx global>{`
+        @keyframes heroFloat {
+          0%, 100% { transform: translateY(0px) translateX(0px); }
+          25%       { transform: translateY(-14px) translateX(8px); }
+          50%       { transform: translateY(-22px) translateX(-4px); }
+          75%       { transform: translateY(-8px) translateX(12px); }
+        }
+      `}</style>
     </section>
   );
 }

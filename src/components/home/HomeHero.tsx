@@ -11,7 +11,6 @@ export async function HomeHero({ locale }: { locale: string }) {
 
   const isEn = locale === "en";
   const slidesRaw = await getHeroSlider().catch(() => []);
-
   const activeSlides = slidesRaw.filter((s) => s.active !== false);
 
   let slides: HeroSlidePayload[];
@@ -20,11 +19,8 @@ export async function HomeHero({ locale }: { locale: string }) {
     slides = activeSlides.map((s) => ({
       image: mediaUrl(s.image),
       title: isEn ? (s.titleEn ?? s.title) : s.title,
-      subtitle: isEn
-        ? (s.subtitleEn ?? s.subtitle ?? "")
-        : (s.subtitle ?? ""),
-      ctaText:
-        (isEn ? (s.ctaTextEn ?? s.ctaText) : s.ctaText) ?? tHome("cta"),
+      subtitle: isEn ? (s.subtitleEn ?? s.subtitle ?? "") : (s.subtitle ?? ""),
+      ctaText: (isEn ? (s.ctaTextEn ?? s.ctaText) : s.ctaText) ?? tHome("cta"),
       ctaLink: s.ctaLink ?? "/iletisim",
     }));
   } else {
@@ -39,11 +35,20 @@ export async function HomeHero({ locale }: { locale: string }) {
     ];
   }
 
+  const features = [
+    { label: tHero("productionProcess"), href: "/uretim-sureci" },
+    { label: tHero("productGroups"),     href: "/urunler" },
+    { label: tHero("sustainability"),    href: "/surdurulebilirlik" },
+  ];
+
   return (
     <HomeHeroClient
       slides={slides}
-      companyName={tHome("companyName")}
-      tagline={tHome("tagline")}
+      title={tHero("title")}
+      description={tHero("description")}
+      features={features}
+      ctaText={tHero("cta")}
+      ctaLink="/kurumsal"
     />
   );
 }
