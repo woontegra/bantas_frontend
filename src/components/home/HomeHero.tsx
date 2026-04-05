@@ -7,14 +7,17 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 const FALLBACK_IMAGE =
   "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2000&q=80";
 
+interface SettingStat    { value: string; label: string; labelEn: string }
+interface SettingFeature { label: string; labelEn: string; href: string }
+
 interface HeroSettings {
   heroBadge?:       string;
   heroBadgeEn?:     string;
   heroBtn2Text?:    string;
   heroBtn2TextEn?:  string;
   heroBtn2Url?:     string;
-  heroStats?:       HeroStat[];
-  heroFeatures?:    HeroFeature[];
+  heroStats?:       SettingStat[];
+  heroFeatures?:    SettingFeature[];
 }
 
 async function getHeroSettings(): Promise<HeroSettings> {
