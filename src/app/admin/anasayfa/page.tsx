@@ -57,7 +57,7 @@ export default function AnasayfaAdminPage() {
     setLoading(true);
     try {
       const res  = await adminFetch("/api/content-pages/anasayfa-settings");
-      const page = res?.data || res;
+      const page = (res as any)?.data || res;
       if (page?.sections) {
         const parsed: PageData = JSON.parse(page.sections);
         if (parsed?.introTitle) { setData(parsed); setLoading(false); return; }

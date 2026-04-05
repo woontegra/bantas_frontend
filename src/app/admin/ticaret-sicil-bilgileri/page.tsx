@@ -63,7 +63,7 @@ export default function TicaretSicilAdminPage() {
     setLoading(true);
     try {
       const res  = await adminFetch("/api/content-pages/ticaret-sicil-bilgileri");
-      const page = res?.data || res;
+      const page = (res as any)?.data || res;
       if (page?.sections) {
         const parsed: PageData = JSON.parse(page.sections);
         if (parsed?.registryData?.length) { setData(parsed); setLoading(false); return; }

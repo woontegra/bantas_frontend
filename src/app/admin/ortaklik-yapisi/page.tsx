@@ -66,7 +66,7 @@ export default function OrtaklikAdminPage() {
     setLoading(true);
     try {
       const res  = await adminFetch("/api/content-pages/ortaklik-yapisi");
-      const page = res?.data || res;
+      const page = (res as any)?.data || res;
       if (page?.sections) {
         const parsed: PageData = JSON.parse(page.sections);
         if (parsed?.shareholders?.length) { setData(parsed); setLoading(false); return; }

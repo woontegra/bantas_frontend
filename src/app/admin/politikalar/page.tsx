@@ -64,7 +64,7 @@ export default function PolitikalarAdminPage() {
     setLoading(true);
     try {
       const res  = await adminFetch("/api/content-pages/politikalar");
-      const page = res?.data || res;
+      const page = (res as any)?.data || res;
       if (page?.sections) {
         const parsed: PageData = JSON.parse(page.sections);
         if (parsed?.policies?.length) { setData(parsed); setLoading(false); return; }
