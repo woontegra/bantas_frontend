@@ -5,7 +5,7 @@ import { CorporateSidebar } from "@/components/layout/CorporateSidebar";
 import { Award, CheckCircle, Shield } from "lucide-react";
 import { mediaUrl } from "@/lib/api";
 import Image from "next/image";
-import { unoptimized } from "@/lib/nextImagePolicy";
+import { shouldUnoptimizeRemoteImage as unoptimized } from "@/lib/nextImagePolicy";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

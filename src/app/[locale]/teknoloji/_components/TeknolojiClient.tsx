@@ -4,7 +4,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, Factory, Ruler } from "lucide-react";
 import { mediaUrl } from "@/lib/api";
 import Image from "next/image";
-import { unoptimized } from "@/lib/nextImagePolicy";
+import { shouldUnoptimizeRemoteImage as unoptimized } from "@/lib/nextImagePolicy";
 
 /* ── Image Carousel ── */
 export function ImageCarousel({ images, alt }: { images: string[]; alt: string }) {
