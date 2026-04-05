@@ -516,9 +516,12 @@
     "quickActions": {
       "quoteTitle": "Teklif Al",
       "quoteDesc": "İhtiyacınıza özel ambalaj çözümleri için bize ulaşın.",
+      "quoteLink": "Hemen Başvur",
       "kvkk": "Kişisel verileriniz, 6698 sayılı KVKK kapsamında korunmaktadır. Aydınlatma metnimizi inceleyebilirsiniz.",
+      "kvkkLink": "Detaylı bilgi",
       "catalogTitle": "Katalog",
-      "catalogDesc": "Ürün gruplarımızı PDF katalog üzerinden inceleyin."
+      "catalogDesc": "Ürün gruplarımızı PDF katalog üzerinden inceleyin.",
+      "catalogLink": "Kataloğu İncele"
     },
     "products": {
       "title": "Ürünler",

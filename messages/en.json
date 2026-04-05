@@ -516,9 +516,12 @@
     "quickActions": {
       "quoteTitle": "Request a quote",
       "quoteDesc": "Reach us for packaging solutions tailored to your needs.",
+      "quoteLink": "Apply Now",
       "kvkk": "Your personal data is protected under KVKK (Turkish Data Protection Law). You can review our privacy notice.",
+      "kvkkLink": "Learn more",
       "catalogTitle": "Catalog",
-      "catalogDesc": "Browse our product groups in PDF format."
+      "catalogDesc": "Browse our product groups in PDF format.",
+      "catalogLink": "View Catalog"
     },
     "products": {
       "title": "Products",

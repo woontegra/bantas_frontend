@@ -1,11 +1,14 @@
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 interface AnasayfaData {
-  introTitle?:     string;
-  introHighlight?: string;
-  introBody?:      string;
+  introTitle?:       string;
+  introTitleEn?:     string;
+  introHighlight?:   string;
+  introHighlightEn?: string;
+  introBody?:        string;
+  introBodyEn?:      string;
 }
 
 async function getAnasayfaData(): Promise<AnasayfaData> {
@@ -24,12 +27,14 @@ async function getAnasayfaData(): Promise<AnasayfaData> {
 }
 
 export async function IntroBlock() {
-  const t   = await getTranslations("home.intro");
-  const api = await getAnasayfaData();
+  const t      = await getTranslations("home.intro");
+  const locale = await getLocale();
+  const isEn   = locale === "en";
+  const api    = await getAnasayfaData();
 
-  const title     = api.introTitle     || t("title");
-  const highlight = api.introHighlight || t("titleHighlight");
-  const body      = api.introBody      || t("body");
+  const title     = (isEn ? api.introTitleEn     : api.introTitle)     || t("title");
+  const highlight = (isEn ? api.introHighlightEn : api.introHighlight) || t("titleHighlight");
+  const body      = (isEn ? api.introBodyEn      : api.introBody)      || t("body");
 
   return (
     <section className="bg-white py-16 md:py-20">
