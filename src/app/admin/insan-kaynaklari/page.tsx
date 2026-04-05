@@ -180,7 +180,7 @@ export default function InsanKaynaklariAdminPage() {
     setUploading(true);
     try {
       const fd = new FormData(); fd.append("file", file);
-      const res = await adminUpload("/api/upload", fd);
+      const res = await adminUpload("/api/upload", fd) as any;
       if (res?.url) setImgField("image", res.url);
     } catch { alert("Görsel yüklenemedi."); }
     finally { setUploading(false); }

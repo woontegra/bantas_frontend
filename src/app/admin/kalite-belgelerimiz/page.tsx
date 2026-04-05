@@ -134,7 +134,7 @@ export default function KaliteBelgelerimizAdminPage() {
     setUploading(certIdx);
     try {
       const fd = new FormData(); fd.append("file", file);
-      const res = await adminUpload("/api/upload", fd);
+      const res = await adminUpload("/api/upload", fd) as any;
       if (res?.url) setCert(certIdx, "image", res.url);
     } catch { alert("Görsel yüklenemedi."); }
     finally { setUploading(null); }

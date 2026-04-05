@@ -217,7 +217,7 @@ export default function SosyalSorumlulukAdminPage() {
     setUploadingIntro(true);
     try {
       const fd = new FormData(); fd.append("file", file);
-      const res = await adminUpload("/api/upload", fd);
+      const res = await adminUpload("/api/upload", fd) as any;
       if (res?.url) setIntro("image", res.url);
     } catch { alert("Görsel yüklenemedi."); }
     finally { setUploadingIntro(false); }

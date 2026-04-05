@@ -83,7 +83,7 @@ function ContentToolbar({
     try {
       const fd = new FormData();
       fd.append("file", file);
-      const res = await adminUpload("/api/upload", fd);
+      const res = await adminUpload("/api/upload", fd) as any;
       const url: string = res?.url ? imgUrl(res.url) : "";
       if (url) {
         // Sync React state from DOM before inserting, then insert

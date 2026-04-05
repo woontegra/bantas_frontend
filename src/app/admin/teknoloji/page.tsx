@@ -191,7 +191,7 @@ export default function TeknolojiAdminPage() {
     try {
       const fd = new FormData();
       fd.append("file", file);
-      const res = await adminUpload("/api/upload", fd);
+      const res = await adminUpload("/api/upload", fd) as any;
       if (res?.url) {
         setData((p) => {
           const secs = [...p.sections];
