@@ -193,8 +193,11 @@ function InlineImagePreview({
   onChange: (v: string) => void;
 }) {
   const srcs = useMemo(() => {
-    const matches = [...content.matchAll(/<img[^>]+src="([^"]+)"/gi)];
-    return matches.map((m) => m[1]);
+    const matches: string[] = [];
+    const re = /<img[^>]+src="([^"]+)"/gi;
+    let m: RegExpExecArray | null;
+    while ((m = re.exec(content)) !== null) matches.push(m[1]);
+    return matches;
   }, [content]);
 
   if (srcs.length === 0) return null;
