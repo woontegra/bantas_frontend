@@ -8,10 +8,14 @@ import { PRODUCT_CATEGORY_SLUGS } from "@/lib/productCategorySlugs";
 import { LogoImage } from "./LogoImage";
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
-function resolveLogoUrl(path?: string | null) {
+function resolveLogoUrl(path?: string | null): string | null {
   if (!path) return null;
-  if (path.startsWith("http")) return path;
-  return `${BACKEND_URL}${path}`;
+  let url = path.startsWith("http") ? path : `${BACKEND_URL}${path}`;
+  // HTTPS sayfasında HTTP kaynak yüklenemez (mixed content) → yükselt
+  if (typeof window === "undefined" && url.startsWith("http://") && !url.includes("localhost")) {
+    url = url.replace("http://", "https://");
+  }
+  return url;
 }
 
 const API_URL_HEADER = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";

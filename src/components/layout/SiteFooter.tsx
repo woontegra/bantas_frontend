@@ -6,8 +6,11 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
 function resolveUrl(path?: string) {
   if (!path) return "";
-  if (path.startsWith("http")) return path;
-  return `${API_URL}${path}`;
+  let url = path.startsWith("http") ? path : `${API_URL}${path}`;
+  if (url.startsWith("http://") && !url.includes("localhost")) {
+    url = url.replace("http://", "https://");
+  }
+  return url;
 }
 
 interface FooterLink   { label: string; href: string; }
