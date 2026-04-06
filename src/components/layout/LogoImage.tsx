@@ -32,7 +32,7 @@ export function LogoImage({ src, alt, variant = "header", className }: Props) {
     <img
       src={src}
       alt={alt}
-      className={className ?? (variant === "footer" ? "h-10 w-auto object-contain" : "h-9 w-auto object-contain sm:h-11")}
+      className={className ?? (variant === "footer" ? "h-10 w-auto max-w-[160px] object-contain" : "h-9 w-auto max-w-[140px] object-contain sm:h-11")}
       onError={() => setBroken(true)}
     />
   );
