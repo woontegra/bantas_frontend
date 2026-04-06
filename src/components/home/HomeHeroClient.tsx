@@ -76,10 +76,12 @@ export function HomeHeroClient({
 
   const current = slides[index] ?? slides[0];
 
-  /* Split title at first space to highlight second part */
-  const words = (current.title || title).split(" ");
-  const firstLine = words.slice(0, Math.ceil(words.length / 2)).join(" ");
-  const secondLine = words.slice(Math.ceil(words.length / 2)).join(" ");
+  /* Split title at roughly half to highlight second part */
+  const rawTitle = (current.title || title || "").trim();
+  const words = rawTitle ? rawTitle.split(" ") : ["Bantaş", "Metal Ambalaj"];
+  const half = Math.ceil(words.length / 2);
+  const firstLine = words.slice(0, half).join(" ");
+  const secondLine = words.slice(half).join(" ");
 
   return (
     <section className="relative w-full overflow-hidden bg-[#03030f]" style={{ height: "900px" }}>
