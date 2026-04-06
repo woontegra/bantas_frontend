@@ -1,16 +1,14 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/navigation";
 import { MapPin, Mail, Phone } from "lucide-react";
+import { LogoImage } from "./LogoImage";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
 function resolveUrl(path?: string) {
-  if (!path) return "";
-  let url = path.startsWith("http") ? path : `${API_URL}${path}`;
-  if (url.startsWith("http://") && !url.includes("localhost")) {
-    url = url.replace("http://", "https://");
-  }
-  return url;
+  if (!path || !API_URL) return "";
+  const url = path.startsWith("http") ? path : `${API_URL}${path}`;
+  return url.startsWith("http://") ? url.replace("http://", "https://") : url;
 }
 
 interface FooterLink   { label: string; href: string; }
@@ -97,7 +95,7 @@ export async function SiteFooter() {
             {/* Logo veya metin */}
             <div className="mb-5">
               {logo ? (
-                <img src={logo} alt="Logo" className="h-10 w-auto object-contain" />
+                <LogoImage src={logo} alt="Bantaş" variant="footer" />
               ) : (
                 <div className="flex items-baseline gap-0 font-bold">
                   <span className="text-xl text-accent-red">BAN</span>

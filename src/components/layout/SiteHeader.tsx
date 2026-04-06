@@ -7,15 +7,12 @@ import { getProductPagesNav, getSiteSettings } from "@/lib/api";
 import { PRODUCT_CATEGORY_SLUGS } from "@/lib/productCategorySlugs";
 import { LogoImage } from "./LogoImage";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "";
 function resolveLogoUrl(path?: string | null): string | null {
-  if (!path) return null;
-  let url = path.startsWith("http") ? path : `${BACKEND_URL}${path}`;
-  // HTTPS sayfasında HTTP kaynak yüklenemez (mixed content) → yükselt
-  if (typeof window === "undefined" && url.startsWith("http://") && !url.includes("localhost")) {
-    url = url.replace("http://", "https://");
-  }
-  return url;
+  if (!path || !BACKEND_URL) return null;
+  const url = path.startsWith("http") ? path : `${BACKEND_URL}${path}`;
+  // HTTP → HTTPS (mixed content koruması)
+  return url.startsWith("http://") ? url.replace("http://", "https://") : url;
 }
 
 const API_URL_HEADER = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
