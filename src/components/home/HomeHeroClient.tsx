@@ -162,7 +162,10 @@ export function HomeHeroClient({
               visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.5rem] font-black leading-[0.92] tracking-tighter text-white">
+            <h1
+              className="font-black leading-[0.95] tracking-tighter text-white"
+              style={{ fontSize: "clamp(2rem, 5.5vw, 5.5rem)" }}
+            >
               {firstLine}
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
