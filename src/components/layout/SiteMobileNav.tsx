@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "@/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 import type { CorporateNavItem } from "./KurumsalNavDropdown";
@@ -32,6 +32,9 @@ export function SiteMobileNav({
   const [open, setOpen] = useState(false);
   const [corpOpen, setCorpOpen] = useState(false);
   const [prodOpen, setProdOpen] = useState(false);
+  // Ghost-click guard: mobilde dokunuş 300ms sonra tekrar "click" ateşlediği için
+  // menü açılır açılmaz backdrop'a düşüp kapanmasın diye kısa süre engelliyoruz.
+  const justOpenedRef = useRef(false);
 
   useEffect(() => {
     if (open) {
@@ -51,7 +54,14 @@ export function SiteMobileNav({
     }
   }, [open]);
 
+  function openMenu() {
+    justOpenedRef.current = true;
+    setOpen(true);
+    setTimeout(() => { justOpenedRef.current = false; }, 400);
+  }
+
   function close() {
+    if (justOpenedRef.current) return;
     setOpen(false);
   }
 
@@ -68,7 +78,7 @@ export function SiteMobileNav({
         aria-expanded={open}
         aria-controls="site-mobile-nav"
         aria-label="Menüyü aç"
-        onClick={() => setOpen(true)}
+        onClick={openMenu}
       >
         <Menu className="h-6 w-6" />
       </button>
