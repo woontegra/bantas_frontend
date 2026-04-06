@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AdminShell } from "../_components/AdminShell";
-import { adminFetch, API } from "@/lib/adminApi";
+import { adminFetch, adminUpload, API } from "@/lib/adminApi";
 import {
   Pencil,
   Trash2,
@@ -13,6 +13,7 @@ import {
   AlignLeft,
   TrendingUp,
   GripVertical,
+  Upload,
 } from "lucide-react";
 import type { ProductPageRecord } from "@/lib/api";
 import { getProductStaticData } from "@/lib/productStaticData";
@@ -305,6 +306,22 @@ export default function ProductPagesAdminPage() {
   const [order, setOrder] = useState(0);
   const [active, setActive] = useState(true);
   const [specTables, setSpecTables] = useState<SpecTable[]>([]);
+  const [imageUploading, setImageUploading] = useState(false);
+  const imageInputRef = useRef<HTMLInputElement>(null);
+
+  async function handleImageUpload(file: File) {
+    setImageUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await adminUpload<{ url: string }>("/api/upload", fd);
+      setMainImage((res as any)?.url ?? "");
+    } catch {
+      // keep existing value
+    } finally {
+      setImageUploading(false);
+    }
+  }
 
   async function load() {
     setLoading(true);
@@ -744,13 +761,38 @@ export default function ProductPagesAdminPage() {
                     />
                   </div>
                   <div>
-                    <label className="label">Ana görsel URL</label>
+                    <label className="label">Ana görsel</label>
+                    {/* Upload button */}
                     <input
-                      className="input font-mono text-sm"
-                      value={mainImage}
-                      onChange={(e) => setMainImage(e.target.value)}
-                      placeholder="/uploads/..."
+                      ref={imageInputRef}
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={(e) => {
+                        const f = e.target.files?.[0];
+                        if (f) handleImageUpload(f);
+                        e.target.value = "";
+                      }}
                     />
+                    <div className="flex gap-2">
+                      <input
+                        className="input flex-1 font-mono text-sm"
+                        value={mainImage}
+                        onChange={(e) => setMainImage(e.target.value)}
+                        placeholder="/uploads/..."
+                      />
+                      <button
+                        type="button"
+                        onClick={() => imageInputRef.current?.click()}
+                        disabled={imageUploading}
+                        className="flex shrink-0 items-center gap-1.5 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+                      >
+                        {imageUploading
+                          ? <Loader2 className="h-4 w-4 animate-spin" />
+                          : <Upload className="h-4 w-4" />}
+                        {imageUploading ? "Yükleniyor…" : "Yükle"}
+                      </button>
+                    </div>
                     {mainImage && (
                       <img
                         src={imgUrl(mainImage)}
