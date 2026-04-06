@@ -1,4 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
+
+export const dynamic = "force-dynamic";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { HomeHero } from "@/components/home/HomeHero";

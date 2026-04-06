@@ -3,13 +3,13 @@ import { fetchWithTimeout } from "./fetchWithTimeout";
 const API_URL =
   process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
-// ─── Generic fetch (Server Components — no-store = always fresh, or use revalidate) ────
+// ─── Generic fetch (Server Components — no-store = always fresh) ────
 export async function apiFetch<T>(
   path: string,
   init?: RequestInit,
 ): Promise<T> {
   const res = await fetchWithTimeout(`${API_URL}${path}`, {
-    next: { revalidate: 30 },
+    cache: "no-store",
     timeoutMs: 8000,
     ...init,
   });
