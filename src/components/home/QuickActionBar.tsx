@@ -12,6 +12,7 @@ interface AnasayfaData {
   quoteUrl?:       string;
   kvkkText?:       string;
   kvkkTextEn?:     string;
+  kvkkPdfUrl?:     string;
   catalogTitle?:   string;
   catalogTitleEn?: string;
   catalogDesc?:    string;
@@ -44,6 +45,7 @@ export async function QuickActionBar() {
   const quoteDesc    = (isEn ? api.quoteDescEn    : api.quoteDesc)    || t("quoteDesc");
   const quoteUrl     = api.quoteUrl     || "/iletisim";
   const kvkkText     = (isEn ? api.kvkkTextEn     : api.kvkkText)     || t("kvkk");
+  const kvkkPdfUrl   = api.kvkkPdfUrl || "";
   const catalogTitle = (isEn ? api.catalogTitleEn : api.catalogTitle) || t("catalogTitle");
   const catalogDesc  = (isEn ? api.catalogDescEn  : api.catalogDesc)  || t("catalogDesc");
   const catalogUrl   = api.catalogUrl   || "/katalog";
@@ -90,13 +92,25 @@ export async function QuickActionBar() {
               <p className="text-white/60 text-xs leading-relaxed">{kvkkText}</p>
             </div>
             <div className="pl-5">
-              <Link
-                href={"/politikalar/kvkk" as never}
-                className="inline-flex items-center gap-1.5 text-xs text-white/40 hover:text-white/70 transition-colors duration-200"
-              >
-                {t("kvkkLink")}
-                <ArrowRight className="w-3 h-3" />
-              </Link>
+              {kvkkPdfUrl ? (
+                <a
+                  href={kvkkPdfUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-white/40 hover:text-white/70 transition-colors duration-200"
+                >
+                  {t("kvkkLink")}
+                  <ArrowRight className="w-3 h-3" />
+                </a>
+              ) : (
+                <Link
+                  href={"/politikalar/kvkk" as never}
+                  className="inline-flex items-center gap-1.5 text-xs text-white/40 hover:text-white/70 transition-colors duration-200"
+                >
+                  {t("kvkkLink")}
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              )}
             </div>
           </div>
 

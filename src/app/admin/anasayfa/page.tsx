@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AdminShell } from "../_components/AdminShell";
-import { adminFetch } from "@/lib/adminApi";
+import { adminFetch, adminUpload } from "@/lib/adminApi";
 import {
-  Home, Save, RefreshCw, CheckCircle, AlertCircle,
+  Home, Save, RefreshCw, CheckCircle, AlertCircle, Upload, Loader2,
 } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
@@ -42,6 +42,7 @@ interface PageData {
   quoteUrl:        string;
   kvkkText:        string;
   kvkkTextEn:      string;
+  kvkkPdfUrl:      string;
   catalogTitle:    string;
   catalogTitleEn:  string;
   catalogDesc:     string;
@@ -85,6 +86,7 @@ const STATIC: PageData = {
   quoteUrl:        "/iletisim",
   kvkkText:        "Kişisel verileriniz, 6698 sayılı KVKK kapsamında korunmaktadır. Aydınlatma metnimizi inceleyebilirsiniz.",
   kvkkTextEn:      "Your personal data is protected under KVKK (Turkish Data Protection Law). You may review our privacy notice.",
+  kvkkPdfUrl:      "",
   catalogTitle:    "Katalog",
   catalogTitleEn:  "Catalog",
   catalogDesc:     "Ürün gruplarımızı PDF katalog üzerinden inceleyin.",
@@ -101,6 +103,20 @@ export default function AnasayfaAdminPage() {
   const [saving,  setSaving]  = useState(false);
   const [status,  setStatus]  = useState<"idle" | "success" | "error">("idle");
   const [tab,     setTab]     = useState<Tab>("topbar");
+  const [pdfUploading, setPdfUploading] = useState(false);
+  const kvkkPdfRef  = useRef<HTMLInputElement>(null);
+  const catalogPdfRef = useRef<HTMLInputElement>(null);
+
+  async function uploadPdf(file: File, field: "kvkkPdfUrl" | "catalogUrl") {
+    setPdfUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await adminUpload<{ url: string }>("/api/upload", fd) as any;
+      if (res?.url) setData(d => ({ ...d, [field]: res.url }));
+    } catch { /* ignore */ }
+    finally { setPdfUploading(false); }
+  }
 
   useEffect(() => { load(); }, []);
 
@@ -502,6 +518,21 @@ export default function AnasayfaAdminPage() {
                 <p className="text-xs font-semibold text-blue-500 uppercase tracking-wider">🇬🇧 English</p>
                 <textarea rows={2} value={data.kvkkTextEn} onChange={set("kvkkTextEn")} className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand focus:outline-none" />
               </div>
+              {/* KVKK PDF */}
+              <div>
+                <label className="mb-1 block text-xs font-medium text-gray-600">PDF Dosyası (tıklayınca açılır)</label>
+                <input ref={kvkkPdfRef} type="file" accept="application/pdf" className="hidden"
+                  onChange={e => { const f = e.target.files?.[0]; if (f) uploadPdf(f, "kvkkPdfUrl"); e.target.value = ""; }} />
+                <div className="flex gap-2">
+                  <input value={data.kvkkPdfUrl} onChange={set("kvkkPdfUrl")} className="flex-1 rounded-lg border border-gray-300 px-3 py-2 font-mono text-sm focus:border-brand focus:outline-none" placeholder="/uploads/kvkk.pdf veya https://..." />
+                  <button type="button" onClick={() => kvkkPdfRef.current?.click()} disabled={pdfUploading}
+                    className="flex shrink-0 items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm hover:bg-gray-50 disabled:opacity-50">
+                    {pdfUploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+                    PDF Yükle
+                  </button>
+                </div>
+                {data.kvkkPdfUrl && <a href={data.kvkkPdfUrl} target="_blank" rel="noopener noreferrer" className="mt-1 text-xs text-blue-600 hover:underline">Önizle →</a>}
+              </div>
             </div>
 
             {/* Catalog */}
@@ -521,7 +552,21 @@ export default function AnasayfaAdminPage() {
                   <div><label className="mb-1 block text-xs font-medium text-gray-600">Description</label><input value={data.catalogDescEn} onChange={set("catalogDescEn")} className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand focus:outline-none" /></div>
                 </div>
               </div>
-              <div><label className="mb-1 block text-xs font-medium text-gray-600">Bağlantı URL</label><input value={data.catalogUrl} onChange={set("catalogUrl")} className="w-full rounded-lg border border-gray-300 px-3 py-2 font-mono text-sm focus:border-brand focus:outline-none" placeholder="/katalog" /></div>
+              {/* Catalog PDF / URL */}
+              <div>
+                <label className="mb-1 block text-xs font-medium text-gray-600">PDF veya Bağlantı URL</label>
+                <input ref={catalogPdfRef} type="file" accept="application/pdf" className="hidden"
+                  onChange={e => { const f = e.target.files?.[0]; if (f) uploadPdf(f, "catalogUrl"); e.target.value = ""; }} />
+                <div className="flex gap-2">
+                  <input value={data.catalogUrl} onChange={set("catalogUrl")} className="flex-1 rounded-lg border border-gray-300 px-3 py-2 font-mono text-sm focus:border-brand focus:outline-none" placeholder="/uploads/katalog.pdf veya /katalog" />
+                  <button type="button" onClick={() => catalogPdfRef.current?.click()} disabled={pdfUploading}
+                    className="flex shrink-0 items-center gap-1.5 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm hover:bg-gray-50 disabled:opacity-50">
+                    {pdfUploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+                    PDF Yükle
+                  </button>
+                </div>
+                {data.catalogUrl && <a href={data.catalogUrl} target="_blank" rel="noopener noreferrer" className="mt-1 text-xs text-blue-600 hover:underline">Önizle →</a>}
+              </div>
             </div>
 
             {/* Preview */}
