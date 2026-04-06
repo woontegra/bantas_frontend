@@ -11,6 +11,10 @@ interface SettingStat    { value: string; label: string; labelEn: string }
 interface SettingFeature { label: string; labelEn: string; href: string }
 
 interface HeroSettings {
+  heroTitle?:       string;
+  heroTitleEn?:     string;
+  heroDesc?:        string;
+  heroDescEn?:      string;
   heroBadge?:       string;
   heroBadgeEn?:     string;
   heroBtn2Text?:    string;
@@ -64,6 +68,13 @@ export async function HomeHero({ locale }: { locale: string }) {
     }];
   }
 
+  /* Title & description fallback from settings */
+  const settingsTitle = (isEn ? settings.heroTitleEn : settings.heroTitle)
+    ?? (isEn ? "Strong Infrastructure in Metal Packaging Production" : "Metal Ambalaj Üretiminde Güçlü Altyapı");
+  const settingsDesc = (isEn ? settings.heroDescEn : settings.heroDesc)
+    ?? (isEn ? "We produce metal packaging with high quality standards in Turkey and global markets."
+             : "Türkiye ve global pazarda yüksek kalite standartlarıyla metal ambalaj üretimi gerçekleştiriyoruz.");
+
   /* Badge */
   const badge = (isEn ? settings.heroBadgeEn : settings.heroBadge)
     ?? (isEn ? "Bantaş Inc. — Metal Packaging" : "Bantaş A.Ş. — Metal Ambalaj");
@@ -105,8 +116,8 @@ export async function HomeHero({ locale }: { locale: string }) {
   return (
     <HomeHeroClient
       slides={slides}
-      title={tHero("title")}
-      description={tHero("description")}
+      title={settingsTitle}
+      description={settingsDesc}
       badge={badge}
       btn2Text={btn2Text}
       btn2Url={btn2Url}

@@ -78,7 +78,7 @@ export function HomeHeroClient({
 
   /* Split title at roughly half to highlight second part */
   const rawTitle = (current.title || title || "").trim();
-  const words = rawTitle ? rawTitle.split(" ") : ["Bantaş", "Metal Ambalaj"];
+  const words = rawTitle ? rawTitle.split(" ") : ["Metal Ambalaj", "Üretiminde Güçlü Altyapı"];
   const half = Math.ceil(words.length / 2);
   const firstLine = words.slice(0, half).join(" ");
   const secondLine = words.slice(half).join(" ");

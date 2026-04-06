@@ -16,6 +16,10 @@ interface PageData {
   topEmail: string;
   topPhone: string;
   // Hero
+  heroTitle:       string;
+  heroTitleEn:     string;
+  heroDesc:        string;
+  heroDescEn:      string;
   heroBadge:       string;
   heroBadgeEn:     string;
   heroBtn2Text:    string;
@@ -48,6 +52,10 @@ interface PageData {
 const STATIC: PageData = {
   topEmail: "info@bantas.com.tr",
   topPhone: "+90 (266) 733 20 20",
+  heroTitle:      "Metal Ambalaj Üretiminde Güçlü Altyapı",
+  heroTitleEn:    "Strong Infrastructure in Metal Packaging Production",
+  heroDesc:       "Türkiye ve global pazarda yüksek kalite standartlarıyla metal ambalaj üretimi gerçekleştiriyoruz.",
+  heroDescEn:     "We produce metal packaging with high quality standards in Turkey and global markets.",
   heroBadge:      "Bantaş A.Ş. — Metal Ambalaj",
   heroBadgeEn:    "Bantaş Inc. — Metal Packaging",
   heroBtn2Text:   "Ürünlerimiz",
@@ -243,6 +251,32 @@ export default function AnasayfaAdminPage() {
         {tab === "hero" && (
           <div className="space-y-5">
             <p className="text-xs text-gray-400">Hero slider görselleri <strong>/admin/hero</strong> sayfasından yönetilir. Burada metin ve buton ayarları düzenlenir.</p>
+
+            {/* Başlık ve Açıklama */}
+            <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm space-y-4">
+              <h2 className="font-semibold text-gray-900">Ana Başlık</h2>
+              <p className="text-xs text-gray-400">Hero slider'daki slaytlarda başlık boşsa bu metin gösterilir.</p>
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                <div>
+                  <label className="mb-1 block text-xs font-medium text-gray-600">🇹🇷 Türkçe Başlık</label>
+                  <input value={data.heroTitle} onChange={set("heroTitle")} className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand focus:outline-none" placeholder="Metal Ambalaj Üretiminde Güçlü Altyapı" />
+                </div>
+                <div>
+                  <label className="mb-1 block text-xs font-medium text-gray-600">🇬🇧 English Title</label>
+                  <input value={data.heroTitleEn} onChange={set("heroTitleEn")} className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand focus:outline-none" placeholder="Strong Infrastructure in Metal Packaging" />
+                </div>
+              </div>
+              <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                <div>
+                  <label className="mb-1 block text-xs font-medium text-gray-600">🇹🇷 Türkçe Açıklama</label>
+                  <textarea value={data.heroDesc} onChange={set("heroDesc")} rows={2} className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand focus:outline-none" />
+                </div>
+                <div>
+                  <label className="mb-1 block text-xs font-medium text-gray-600">🇬🇧 English Description</label>
+                  <textarea value={data.heroDescEn} onChange={set("heroDescEn")} rows={2} className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:border-brand focus:outline-none" />
+                </div>
+              </div>
+            </div>
 
             {/* Badge */}
             <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm space-y-4">
