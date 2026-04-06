@@ -5,6 +5,14 @@ import { KurumsalNavDropdown } from "./KurumsalNavDropdown";
 import { SiteMobileNav } from "./SiteMobileNav";
 import { getProductPagesNav, getSiteSettings } from "@/lib/api";
 import { PRODUCT_CATEGORY_SLUGS } from "@/lib/productCategorySlugs";
+import Image from "next/image";
+
+const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+function resolveLogoUrl(path?: string | null) {
+  if (!path) return null;
+  if (path.startsWith("http")) return path;
+  return `${BACKEND_URL}${path}`;
+}
 
 const API_URL_HEADER = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
@@ -129,12 +137,22 @@ export async function SiteHeader() {
 
       <div className="border-b border-slate-200/80 bg-white/95 shadow-sm backdrop-blur-md">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-2.5 sm:px-4 sm:py-3">
-          <Link
-            href="/"
-            className="flex min-w-0 shrink-0 items-baseline gap-0 font-bold tracking-tight"
-          >
-            <span className="text-lg text-accent-red sm:text-xl">BAN</span>
-            <span className="text-lg text-brand sm:text-xl">TAŞ</span>
+          <Link href="/" className="flex min-w-0 shrink-0 items-center">
+            {resolveLogoUrl(siteSettings?.logo) ? (
+              <Image
+                src={resolveLogoUrl(siteSettings?.logo)!}
+                alt={siteSettings?.siteName || "Bantaş"}
+                width={140}
+                height={44}
+                className="h-9 w-auto object-contain sm:h-11"
+                unoptimized
+              />
+            ) : (
+              <span className="font-bold tracking-tight">
+                <span className="text-lg text-accent-red sm:text-xl">BAN</span>
+                <span className="text-lg text-brand sm:text-xl">TAŞ</span>
+              </span>
+            )}
           </Link>
 
           <SiteMobileNav

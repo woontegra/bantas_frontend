@@ -113,6 +113,13 @@ export interface FooterInfo {
 export interface SiteSettings {
   id: string;
   siteName: string;
+  logo?: string;
+  favicon?: string;
+  googleAnalyticsId?: string;
+  googleTagManagerId?: string;
+  googleSearchConsole?: string;
+  facebookPixelId?: string;
+  facebookAccessToken?: string;
   email?: string;
   phone?: string;
   address?: string;
