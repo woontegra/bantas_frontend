@@ -27,6 +27,16 @@ const nextConfig = {
         hostname: "gondola.proxy.rlwy.net",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "*.up.railway.app",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "*.railway.app",
+        pathname: "/**",
+      },
     ],
   },
 };
