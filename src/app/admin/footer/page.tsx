@@ -1,17 +1,18 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AdminShell } from "../_components/AdminShell";
-import { adminFetch } from "@/lib/adminApi";
+import { adminFetch, adminUpload, API } from "@/lib/adminApi";
 import {
   LayoutTemplate, Save, RefreshCw, CheckCircle, AlertCircle,
-  Plus, Trash2, GripVertical,
+  Plus, Trash2, GripVertical, Upload, Loader2,
 } from "lucide-react";
 
 // ── Types ──────────────────────────────────────────────────────────────────
 interface FooterLink   { label: string; href: string; }
 interface FooterColumn { title: string; links: FooterLink[]; }
 interface PageData {
+  logo?:     string;
   address:   string;
   email:     string;
   phone:     string;
@@ -61,6 +62,23 @@ export default function FooterAdminPage() {
   const [loading, setLoading] = useState(true);
   const [saving,  setSaving]  = useState(false);
   const [status,  setStatus]  = useState<"idle" | "success" | "error">("idle");
+  const [logoUploading, setLogoUploading] = useState(false);
+  const [logoPreview,   setLogoPreview]   = useState("");
+  const logoRef = useRef<HTMLInputElement>(null);
+
+  async function uploadLogo(file: File) {
+    setLogoUploading(true);
+    try {
+      const fd = new FormData();
+      fd.append("file", file);
+      const res = await adminUpload<{ url: string }>("/api/upload", fd) as any;
+      if (res?.url) {
+        setData(d => ({ ...d, logo: res.url }));
+        setLogoPreview(`${API}${res.url}`);
+      }
+    } catch { /* ignore */ }
+    finally { setLogoUploading(false); }
+  }
 
   useEffect(() => { load(); }, []);
 
@@ -174,6 +192,46 @@ export default function FooterAdminPage() {
               {saving ? <RefreshCw className="h-4 w-4 animate-spin" /> : <Save className="h-4 w-4" />}
               Kaydet
             </button>
+          </div>
+        </div>
+
+        {/* ── Logo ────────────────────────────────────────────────────────────── */}
+        <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+          <h2 className="mb-4 font-semibold text-gray-900">Footer Logosu</h2>
+          <p className="mb-4 text-xs text-gray-500">Yüklemezseniz "BANTAŞ" metni görünür.</p>
+          <input
+            ref={logoRef}
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={e => { const f = e.target.files?.[0]; if (f) uploadLogo(f); }}
+          />
+          <div className="flex items-center gap-4">
+            {(logoPreview || data.logo) && (
+              <img
+                src={logoPreview || (data.logo?.startsWith("http") ? data.logo : `${API}${data.logo}`)}
+                alt="footer logo önizleme"
+                className="h-12 w-auto rounded border border-gray-200 object-contain bg-slate-800 p-1"
+              />
+            )}
+            <button
+              type="button"
+              onClick={() => logoRef.current?.click()}
+              disabled={logoUploading}
+              className="flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-50"
+            >
+              {logoUploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+              {logoUploading ? "Yükleniyor…" : "Logo Yükle"}
+            </button>
+            {data.logo && (
+              <button
+                type="button"
+                onClick={() => { setData(d => ({ ...d, logo: "" })); setLogoPreview(""); }}
+                className="text-xs text-red-500 hover:text-red-700"
+              >
+                Kaldır
+              </button>
+            )}
           </div>
         </div>
 
