@@ -5,7 +5,7 @@ import { KurumsalNavDropdown } from "./KurumsalNavDropdown";
 import { SiteMobileNav } from "./SiteMobileNav";
 import { getProductPagesNav, getSiteSettings } from "@/lib/api";
 import { PRODUCT_CATEGORY_SLUGS } from "@/lib/productCategorySlugs";
-import Image from "next/image";
+import { LogoImage } from "./LogoImage";
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 function resolveLogoUrl(path?: string | null) {
@@ -139,13 +139,9 @@ export async function SiteHeader() {
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-3 py-2.5 sm:px-4 sm:py-3">
           <Link href="/" className="flex min-w-0 shrink-0 items-center">
             {resolveLogoUrl(siteSettings?.logo) ? (
-              <Image
+              <LogoImage
                 src={resolveLogoUrl(siteSettings?.logo)!}
                 alt={siteSettings?.siteName || "Bantaş"}
-                width={140}
-                height={44}
-                className="h-9 w-auto object-contain sm:h-11"
-                unoptimized
               />
             ) : (
               <span className="font-bold tracking-tight">
