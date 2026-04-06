@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AdminShell } from "../_components/AdminShell";
-import { adminFetch, adminUpload } from "@/lib/adminApi";
+import { adminFetch, adminUpload, API } from "@/lib/adminApi";
+
+function resolveFileUrl(url: string) {
+  if (!url) return url;
+  if (url.startsWith("http")) return url;
+  return `${API}${url}`;
+}
 import {
   Home, Save, RefreshCw, CheckCircle, AlertCircle, Upload, Loader2,
 } from "lucide-react";
@@ -531,7 +537,7 @@ export default function AnasayfaAdminPage() {
                     PDF Yükle
                   </button>
                 </div>
-                {data.kvkkPdfUrl && <a href={data.kvkkPdfUrl} target="_blank" rel="noopener noreferrer" className="mt-1 text-xs text-blue-600 hover:underline">Önizle →</a>}
+                {data.kvkkPdfUrl && <a href={resolveFileUrl(data.kvkkPdfUrl)} target="_blank" rel="noopener noreferrer" className="mt-1 text-xs text-blue-600 hover:underline">Önizle →</a>}
               </div>
             </div>
 
@@ -565,7 +571,7 @@ export default function AnasayfaAdminPage() {
                     PDF Yükle
                   </button>
                 </div>
-                {data.catalogUrl && <a href={data.catalogUrl} target="_blank" rel="noopener noreferrer" className="mt-1 text-xs text-blue-600 hover:underline">Önizle →</a>}
+                {data.catalogUrl && <a href={resolveFileUrl(data.catalogUrl)} target="_blank" rel="noopener noreferrer" className="mt-1 text-xs text-blue-600 hover:underline">Önizle →</a>}
               </div>
             </div>
 

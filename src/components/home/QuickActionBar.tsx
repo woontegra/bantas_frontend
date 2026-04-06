@@ -4,6 +4,12 @@ import { FileText, BookOpen, ArrowRight } from "lucide-react";
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
 
+function resolveUrl(url?: string) {
+  if (!url) return "";
+  if (url.startsWith("http")) return url;
+  return `${API_URL}${url}`;
+}
+
 interface AnasayfaData {
   quoteTitle?:     string;
   quoteTitleEn?:   string;
@@ -45,10 +51,11 @@ export async function QuickActionBar() {
   const quoteDesc    = (isEn ? api.quoteDescEn    : api.quoteDesc)    || t("quoteDesc");
   const quoteUrl     = api.quoteUrl     || "/iletisim";
   const kvkkText     = (isEn ? api.kvkkTextEn     : api.kvkkText)     || t("kvkk");
-  const kvkkPdfUrl   = api.kvkkPdfUrl || "";
+  const kvkkPdfUrl   = resolveUrl(api.kvkkPdfUrl);
+  const resolvedCatalogUrl = resolveUrl(api.catalogUrl) || "/katalog";
   const catalogTitle = (isEn ? api.catalogTitleEn : api.catalogTitle) || t("catalogTitle");
   const catalogDesc  = (isEn ? api.catalogDescEn  : api.catalogDesc)  || t("catalogDesc");
-  const catalogUrl   = api.catalogUrl   || "/katalog";
+  const catalogUrl   = resolvedCatalogUrl;
 
   return (
     <section className="relative bg-gradient-to-br from-[#0f172a] to-[#1e3a8a] overflow-hidden">
@@ -124,13 +131,25 @@ export async function QuickActionBar() {
             </div>
             <p className="text-white/50 text-sm leading-relaxed pl-[52px]">{catalogDesc}</p>
             <div className="pl-[52px]">
-              <Link
-                href={catalogUrl as never}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors duration-200 group/link"
-              >
-                {t("catalogLink")}
-                <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" />
-              </Link>
+              {catalogUrl.startsWith("http") || catalogUrl.includes("/uploads/") ? (
+                <a
+                  href={catalogUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors duration-200 group/link"
+                >
+                  {t("catalogLink")}
+                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" />
+                </a>
+              ) : (
+                <Link
+                  href={catalogUrl as never}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors duration-200 group/link"
+                >
+                  {t("catalogLink")}
+                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-200" />
+                </Link>
+              )}
             </div>
           </div>
 
